@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
 
 
@@ -22,12 +23,17 @@ public class Interaction : MonoBehaviour {
 
     //}
     public void Update(){
-        
         RaycastHit hit;
+
         Camera camera = Camera.main;
+
+        Debug.DrawRay(transform.position, Input.mousePosition , UnityEngine.Color.red);
+        
+        
         if(Physics.Raycast(camera.ScreenPointToRay(Input.mousePosition),out hit)) {
             if (hit.transform.tag == "machiniste1") {
                 Debug.Log("machiniste1");
+                
                 position = 1;
 
             }
@@ -82,6 +88,16 @@ public class Interaction : MonoBehaviour {
             yTransform = 0;
             zTransform = 40;
 
-        } 
+            
+            //_____________________Fonction Interessante
+
+            //Debug.Log(hit.transform.name);_________donne l'information d'un objet hit par leraycast
+            //gameObject.SetActive(false/true)______desative
+            //Destroy(gameObject) _______detruit
+            //gameObject.GetComponent<nomDuComponent>().enable = false/true; ______permet de modifier un component
+
+
+
+        }
     }
 }
