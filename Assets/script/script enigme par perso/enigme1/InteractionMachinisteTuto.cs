@@ -8,10 +8,11 @@ public class InteractionMachinisteTuto : MonoBehaviour
     [SerializeField]
     GameObject panel;
 
+
     public float xTransform;
     public float yTransform;
     public float zTransform;
-    public int position = 10;
+    public int position = 0;
 
     //position_interface => X = 24.20001/ Y = 6.9     /   Z = -3.9
 
@@ -20,7 +21,7 @@ public class InteractionMachinisteTuto : MonoBehaviour
     //Vector => X = 0   /  Y =0   /   Z = -40
 
     // cam =>  X= 0   Y=12.1     Z=-10
-    
+  /*
     public void Button_Interaction_Machiniste1()
 
     {
@@ -28,12 +29,15 @@ public class InteractionMachinisteTuto : MonoBehaviour
         Debug.Log("test");
         position = 1;
         //panel.transform.Translate(24.20001,6.9,-3.9);
-        panel.transform.Translate(24, 7, -4);
+        //panel.transform.Translate(24, 7, -4);
         //panel.transform.Translate(xTransform, yTransform, zTransform);
     }
-    
+    */
     void Update()
     {
+
+        panel.transform.Translate(xTransform, yTransform, zTransform);
+
         //position de base
         if (position == 0)
         {
@@ -51,14 +55,6 @@ public class InteractionMachinisteTuto : MonoBehaviour
             zTransform = -40;
         }
 
-        //position de base
-        else if (position == 0)
-        {
-            xTransform = 0;
-            yTransform = 0;
-            zTransform = 0;
-
-        }
 
         //aller a droite
         else if (position == 2)

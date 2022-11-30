@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - machiniste1
+  - machiniste2
+  - machiniste3
+  - machiniste4
   layers:
   - Default
   - TransparentFX

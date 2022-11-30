@@ -13,7 +13,7 @@ public class buttonAllerADroite : MonoBehaviour
     {
 
         //Debug.Log("Machiniste1");
-        interactionMachinisteTuto.position = 2;
+        interactionMachinisteTuto.position = 1;
        
     }
 }
