@@ -11,6 +11,10 @@ public class Interaction : MonoBehaviour {
     [SerializeField]
     GameObject panel;
 
+    [SerializeField]
+    GameObject backButton;
+
+
     public float xTransform;
     public float yTransform;
     public float zTransform;
@@ -22,6 +26,15 @@ public class Interaction : MonoBehaviour {
     //Debug.Log("test");
 
     //}
+
+    public void Start(){
+        
+        panel.SetActive(false);
+        backButton.SetActive(false);
+
+    }
+
+
     public void Update(){
         RaycastHit hit;
 
@@ -32,9 +45,11 @@ public class Interaction : MonoBehaviour {
         
         if(Physics.Raycast(camera.ScreenPointToRay(Input.mousePosition),out hit)) {
             if (hit.transform.tag == "machiniste1") {
+
+                panel.SetActive(true);
+                backButton.SetActive(true);
                 Debug.Log("machiniste1");
                 
-                position = 1;
 
             }
 
@@ -42,27 +57,13 @@ public class Interaction : MonoBehaviour {
         }
 
         //panel.transform.SetPositionAndRotation(xTransform, yTransform, zTransform);
-        panel.transform.Translate(xTransform, yTransform, zTransform);
+       // panel.transform.Translate(xTransform, yTransform, zTransform);
 
 
-        //position de base
-        if (position == 0)
-        {
-            xTransform = 0;
-            yTransform = 0;
-            zTransform = 0;
+       
 
-        }
-
-        //aller dans le champ
-        else if (position == 1)
-        {
-            xTransform = 0;
-            yTransform = 0;
-            zTransform = -40;
-        }
-
-
+      
+        /*
         //aller a droite
         else if (position == 2)
         {
@@ -80,14 +81,7 @@ public class Interaction : MonoBehaviour {
             zTransform = 0;
 
         }
-
-        //aller hors champ
-        else if (position == 4)
-        {
-            xTransform = 0;
-            yTransform = 0;
-            zTransform = 40;
-
+        */
             
             //_____________________Fonction Interessante
 
@@ -98,6 +92,6 @@ public class Interaction : MonoBehaviour {
 
 
 
-        }
+        
     }
 }
