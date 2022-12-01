@@ -14,6 +14,11 @@ public class Interaction : MonoBehaviour {
     [SerializeField]
     GameObject backButton;
 
+    [SerializeField]
+    GameObject leftButton;
+    
+    [SerializeField]
+    GameObject rightButton;
 
     public float xTransform;
     public float yTransform;
@@ -31,6 +36,8 @@ public class Interaction : MonoBehaviour {
         
         panel.SetActive(false);
         backButton.SetActive(false);
+        leftButton.SetActive(false);
+        rightButton.SetActive(false);
 
     }
 
@@ -48,6 +55,9 @@ public class Interaction : MonoBehaviour {
 
                 panel.SetActive(true);
                 backButton.SetActive(true);
+                leftButton.SetActive(true);
+                rightButton.SetActive(true);
+
                 Debug.Log("machiniste1");
                 
 
