@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class Button : MonoBehaviour {
 
+    public Transform panels;
+
     [SerializeField]
     GameObject panel;
 
@@ -19,6 +21,21 @@ public class Button : MonoBehaviour {
     [SerializeField]
     GameObject rightBouton;
 
+    /*
+    [SerializeField]
+    Transform snapAnchor;
+
+    //Vitesse du snap de l'objet au point d 'encrage
+    [SerializeField]
+    float snapSpeed = 10f;
+
+    // vitesse de l'objet suivant la souris
+    [SerializeField]
+    float followSpeed = 10f;
+    
+    [SerializeField]
+    float positiondroite = 27;
+    */
 
     /*
         void Start()
@@ -42,19 +59,33 @@ public class Button : MonoBehaviour {
         {
 
         //Debug.Log("right");
+        //panels.position = Vector3.Lerp(panel.transform.Translate(27, 0, 0)), Time.deltaTime * snapSpeed);
 
-        panel.transform.Translate(27,0,0);
-        
+        //panels.position = Vector3.Lerp.(panel.transform.Translate(27,0,0), Time.deltaTime* snapSpeed);
+        //positiondroite = Lerp.(0, 27, Time.deltaTime * snapSpeed);
+        panel.transform.Translate(27, 0, 0);
+    }
+    /*
+    panel.position = Vector3.Lerp(panel.position, panel.position.x=+27, Time.deltaTime* snapSpeed);
+
         }
-
-
-
-        public void leftButton()
+        else
+{
+    //snap avec une certaine vitesse en dehors du point d'ancrage
+    anchor.position = Vector3.Lerp(anchor.position, lastHitPos, Time.deltaTime * followSpeed);
+    */
+    public void leftButton()
         {
 
         //Debug.Log("left");
 
         panel.transform.Translate(-27, 0, 0);
     }
- }
+/*
+    public void Update()
+    {
+        
+    }
+*/
+}
 
