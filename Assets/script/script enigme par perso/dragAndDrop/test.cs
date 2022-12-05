@@ -45,6 +45,20 @@ public class test : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     void Update()
     {
         //__________________________Rend le drag and drop smooth
+        /*
+        //snap avec une certaine vitesse vers le point d'ancrage
+        if (Vector3.Distance(lastHitPos, snapAnchor.position) < 2f)
+        {
+            //lerp = smooth
+            anchor.position = Vector3.Lerp(anchor.position, snapAnchor.position, Time.deltaTime * snapSpeed);
+
+        }
+        else
+        {
+            //snap avec une certaine vitesse en dehors du point d'ancrage
+            anchor.position = Vector3.Lerp(anchor.position, lastHitPos, Time.deltaTime * followSpeed);
+        }
+        */
 
         //snap avec une certaine vitesse vers le point d'ancrage
         if (Vector3.Distance(lastHitPos, snapAnchor.position) < 2f)

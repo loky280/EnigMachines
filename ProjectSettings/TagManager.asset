@@ -8,6 +8,8 @@ TagManager:
   - machiniste2
   - machiniste3
   - machiniste4
+  - Porte
+  - porteInterieur
   layers:
   - Default
   - TransparentFX
