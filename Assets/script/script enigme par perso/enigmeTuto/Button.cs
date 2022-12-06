@@ -21,6 +21,7 @@ public class Button : MonoBehaviour {
     [SerializeField]
     GameObject rightBouton;
 
+    //Vector3 VectorPanel;
     /*
     [SerializeField]
     Transform snapAnchor;
@@ -37,12 +38,15 @@ public class Button : MonoBehaviour {
     float positiondroite = 27;
     */
 
-    /*
+    
         void Start()
         {
-            Button btn = boutonback.GetComponent<Button>();____________creer un input de bouton
-            btn.onClick.AddListener(backButton);
-        }*/
+        //VectorPanel = new Vector3(27, 0, 0);
+        //Button btn = boutonback.GetComponent<Button>();____________creer un input de bouton
+        //btn.onClick.AddListener(backButton);
+    }
+
+    
     public void backButton()
     {
 
@@ -64,6 +68,8 @@ public class Button : MonoBehaviour {
         //panels.position = Vector3.Lerp.(panel.transform.Translate(27,0,0), Time.deltaTime* snapSpeed);
         //positiondroite = Lerp.(0, 27, Time.deltaTime * snapSpeed);
         panel.transform.Translate(27, 0, 0);
+        //panel.transform.position = Vector3.Lerp.(panel.transform.position, VectorPanel, 10f);
+
     }
     /*
     panel.position = Vector3.Lerp(panel.position, panel.position.x=+27, Time.deltaTime* snapSpeed);

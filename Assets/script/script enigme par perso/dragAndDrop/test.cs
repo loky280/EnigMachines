@@ -12,7 +12,10 @@ public class test : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
  
 
     public Transform anchor;
-    
+
+    [SerializeField]
+    GameObject engrenageCasserCheck;
+
     //_________________transform du snap
     [SerializeField]
     Transform snapAnchor;
@@ -108,22 +111,18 @@ public class test : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
             Debug.Log("Did Hit");
 
             lastHitPos = hit.point;
-
+            
         }
-
-
-
-
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
         Debug.Log("Casimir");
         
-        //if (hit.transform.tag == "engrenageCasser")
-        //{
-            //engrenageCasser.SetActive(false);
-        //}
+        if (engrenageCasserCheck.transform.tag == "engrenageCasser")
+       {
+          engrenageCasserCheck.SetActive(false);
+        }
 
 
     }
