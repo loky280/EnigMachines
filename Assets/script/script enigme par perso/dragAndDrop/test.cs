@@ -119,5 +119,12 @@ public class test : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     public void OnEndDrag(PointerEventData eventData)
     {
         Debug.Log("Casimir");
+        
+        //if (hit.transform.tag == "engrenageCasser")
+        //{
+            //engrenageCasser.SetActive(false);
+        //}
+
+
     }
 }
