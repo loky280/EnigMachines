@@ -16,6 +16,9 @@ public class test : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     [SerializeField]
     GameObject engrenageCasserCheck;
 
+    [SerializeField]
+    GameObject slot;
+
     //_________________transform du snap
     [SerializeField]
     Transform snapAnchor;
@@ -124,6 +127,10 @@ public class test : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
           engrenageCasserCheck.SetActive(false);
         }
 
-
+        if (engrenageCasserCheck.transform.tag == "Jerican")
+        {
+            //engrenageCasserCheck.transform.position = Vector3.Lerp(engrenageCasserCheck.transform.position, slot.transform.position, Time.deltaTime * snapSpeed);
+            //anchor.position = Vector3.Lerp(anchor.position, snapAnchor.position, Time.deltaTime * snapSpeed);
+        }
     }
 }

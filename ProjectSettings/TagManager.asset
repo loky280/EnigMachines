@@ -11,6 +11,8 @@ TagManager:
   - Porte
   - porteInterieur
   - engrenageCasser
+  - PositionJerican
+  - Jerican
   layers:
   - Default
   - TransparentFX

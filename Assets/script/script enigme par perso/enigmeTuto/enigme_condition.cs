@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using System.Drawing;
 
 public class enigme_condition : MonoBehaviour
 {
@@ -76,16 +77,24 @@ public class enigme_condition : MonoBehaviour
     [SerializeField]
     GameObject cable4;
 
- 
+    //====================================================< enigmetuto Panel 3>
 
+    [SerializeField]
+    GameObject jerican;
+
+    [SerializeField]
+    GameObject CheckJericanPosition;
+
+    public float essence;
 
     // Start is called before the first frame update
     void Start()
     {
+        
         //VectorEngrenageCasser = new Vector3(0, -17, -58);
 
-        engrenageCasser.transform.position = Vector3.Lerp(engrenageCasser.transform.position, PTSEncrage1.transform.position,50f);
-
+        //engrenageCasser.transform.position = Vector3.Lerp(engrenageCasser.transform.position, PTSEncrage1.transform.position,50f);
+        essence = 1;
         Greenlight1.SetActive(false);
         Greenlight2.SetActive(false);
         Greenlight3.SetActive(false);
@@ -96,7 +105,7 @@ public class enigme_condition : MonoBehaviour
     void Update()
     {
         //__________________________________win condition panel 1
-        
+
         if ((Vector3.Distance(engrenage1.transform.position, PTSEncrage1.transform.position) < 2f) && (Vector3.Distance(engrenage2.transform.position, PTSEncrage2.transform.position) < 2f) &&
          (Vector3.Distance(GrosEngrenage1.transform.position, PTSEncrage3.transform.position) < 2f))
         {
@@ -115,22 +124,43 @@ public class enigme_condition : MonoBehaviour
 
         //__________________________________win condition panel 2
 
-        if ((Vector3.Distance(cable1.transform.position,Prise1.transform.position) < 2f) && (Vector3.Distance(cable2.transform.position, Prise2.transform.position) < 2f) &&
+        if ((Vector3.Distance(cable1.transform.position, Prise1.transform.position) < 2f) && (Vector3.Distance(cable2.transform.position, Prise2.transform.position) < 2f) &&
         (Vector3.Distance(cable3.transform.position, Prise3.transform.position) < 2f) && (Vector3.Distance(cable4.transform.position, Prise4.transform.position) < 2f))
 
         {
-            winPanel1 = true;
+            winPanel2 = true;
             Greenlight2.SetActive(true);
         }
 
+        //__________________________________win condition panel 3
+        
 
-        //__________________________________win condition panel 2
-        //if (Vector3.Distance(engrenage1.transform.position,PTSEncrage1.transform.position)< 2f){
+        if ((Vector3.Distance(jerican.transform.position, CheckJericanPosition.transform.position)) < 2f){
 
-        //Debug.Log("prout");
-        //winPanel1 = true;
-        //Greenlight1.SetActive(true);
-        //}
+            essence += 1 * Time.deltaTime;
+             
+            if ( essence >= 8)
+            {
+                winPanel3 = true;
+                Greenlight3.SetActive(true);
+            }
+            /* 
+        Camera camera = Camera.main;
+        RaycastHit hit;
+        if (Physics.Raycast(camera.ScreenPointToRay(Input.mousePosition), out hit))
+        {
+            if (hit.transform.tag == "PositionJerican")
+            {*/
+                Debug.Log("essence" + essence);
+                //__________________________________win condition panel 2
+                //if (Vector3.Distance(engrenage1.transform.position,PTSEncrage1.transform.position)< 2f){
+
+                //Debug.Log("prout");
+                //winPanel1 = true;
+                //Greenlight1.SetActive(true);
+                //}
+            }
+        
     }
 }
 
