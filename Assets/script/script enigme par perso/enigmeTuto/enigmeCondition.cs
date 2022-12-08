@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using System.Drawing;
 
-public class enigme_condition : MonoBehaviour
+public class enigmeCondition : MonoBehaviour
 {
     public Boolean winPanel1;
     public Boolean winPanel2;
@@ -42,11 +42,33 @@ public class enigme_condition : MonoBehaviour
     [SerializeField]
     GameObject Greenlight3;
 
+    //_______________Green and Red light bouton
+
+    [SerializeField]
+    GameObject GreenlightBouton1;
+
+    [SerializeField]
+    GameObject GreenlightBouton2;
+
+    [SerializeField]
+    GameObject GreenlightBouton3;
+
+    [SerializeField]
+    GameObject redlightBouton1;
+
+    [SerializeField]
+    GameObject redlightBouton2;
+
+    [SerializeField]
+    GameObject redlightBouton3;
+
+
+/*
     //_______________mise en place
 
     [SerializeField]
     GameObject engrenageCasser;
-
+*/
     //====================================================< enigmetuto Panel 2>
 
     //_______________Prises
@@ -95,6 +117,11 @@ public class enigme_condition : MonoBehaviour
 
         //engrenageCasser.transform.position = Vector3.Lerp(engrenageCasser.transform.position, PTSEncrage1.transform.position,50f);
         essence = 1;
+
+        
+        GreenlightBouton1.SetActive(false);
+        GreenlightBouton2.SetActive(false);
+        GreenlightBouton3.SetActive(false);
         Greenlight1.SetActive(false);
         Greenlight2.SetActive(false);
         Greenlight3.SetActive(false);
@@ -111,6 +138,10 @@ public class enigme_condition : MonoBehaviour
         {
             winPanel1 = true;
             Greenlight1.SetActive(true);
+            GreenlightBouton2.SetActive(true);
+            redlightBouton2.SetActive(false);
+
+            
         }
 
 
@@ -120,6 +151,9 @@ public class enigme_condition : MonoBehaviour
         {
             winPanel1 = true;
             Greenlight1.SetActive(true);
+            GreenlightBouton2.SetActive(true);
+            redlightBouton2.SetActive(false);
+
         }
 
         //__________________________________win condition panel 2
@@ -130,6 +164,8 @@ public class enigme_condition : MonoBehaviour
         {
             winPanel2 = true;
             Greenlight2.SetActive(true);
+            GreenlightBouton3.SetActive(true);
+            redlightBouton3.SetActive(false);
         }
 
         //__________________________________win condition panel 3
@@ -143,6 +179,8 @@ public class enigme_condition : MonoBehaviour
             {
                 winPanel3 = true;
                 Greenlight3.SetActive(true);
+                GreenlightBouton1.SetActive(true);
+                redlightBouton1.SetActive(false);
             }
             /* 
         Camera camera = Camera.main;

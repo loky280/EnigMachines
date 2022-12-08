@@ -129,7 +129,9 @@ public class test : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
         if (engrenageCasserCheck.transform.tag == "Jerican")
         {
-            //engrenageCasserCheck.transform.position = Vector3.Lerp(engrenageCasserCheck.transform.position, slot.transform.position, Time.deltaTime * snapSpeed);
+            Debug.Log("jericanLacher");
+            //engrenageCasserCheck.transform.position = Vector3.Lerp(anchor.position, slot.transform.position, Time.deltaTime * 40);
+            lastHitPos = slot.transform.position;
             //anchor.position = Vector3.Lerp(anchor.position, snapAnchor.position, Time.deltaTime * snapSpeed);
         }
     }

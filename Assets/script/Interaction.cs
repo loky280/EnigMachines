@@ -9,7 +9,7 @@ public class Interaction : MonoBehaviour {
 
     // Variables
     [SerializeField]
-    GameObject panel;
+    GameObject enigme;
 
     [SerializeField]
     GameObject backButton;
@@ -35,7 +35,7 @@ public class Interaction : MonoBehaviour {
 
         VectorCam = new Vector3(-183, -17, -58);
 
-        panel.SetActive(false);
+        enigme.SetActive(false);
         backButton.SetActive(false);
         leftButton.SetActive(false);
         rightButton.SetActive(false);
@@ -56,7 +56,7 @@ public class Interaction : MonoBehaviour {
             if (hit.transform.tag == "machiniste1")
             {
 
-                panel.SetActive(true);
+                enigme.SetActive(true);
                 backButton.SetActive(true);
                 leftButton.SetActive(true);
                 rightButton.SetActive(true);
