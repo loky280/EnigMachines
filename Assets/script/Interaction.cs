@@ -12,6 +12,9 @@ public class Interaction : MonoBehaviour {
     GameObject enigme;
 
     [SerializeField]
+    GameObject okBoutton;
+
+    [SerializeField]
     GameObject backButton;
 
     [SerializeField]
@@ -39,7 +42,7 @@ public class Interaction : MonoBehaviour {
         backButton.SetActive(false);
         leftButton.SetActive(false);
         rightButton.SetActive(false);
-        
+        okBoutton.SetActive(false);
 
     }
 

@@ -21,7 +21,7 @@ public class test : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
     //_________________transform du snap
     [SerializeField]
-    Transform snapAnchor;
+    Transform[] snapAnchors;
 
     //Vitesse du snap de l'objet au point d 'encrage
     [SerializeField]
@@ -30,6 +30,9 @@ public class test : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     // vitesse de l'objet suivant la souris
     [SerializeField]
     float followSpeed = 10f;
+
+    [SerializeField]
+    float snapDistance = 1.5f;
 
     Camera cam;
 
@@ -66,26 +69,60 @@ public class test : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         }
         */
 
-        //snap avec une certaine vitesse vers le point d'ancrage
-        if (Vector3.Distance(lastHitPos, snapAnchor.position) < 2f)
-        {
-            //lerp = smooth
-            anchor.position = Vector3.Lerp(anchor.position, snapAnchor.position, Time.deltaTime * snapSpeed);
 
+        //S'il y a au moins une ancre de snap
+        if(snapAnchors.Length >=1)
+        {
+
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////
+            /////////////////////////////////////////             SNAP               ////////////////////////////////
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            Transform _closestAnchor = snapAnchors[0];
+            float _smallestdistance = Vector3.Distance(lastHitPos, snapAnchors[0].position);
+
+            //ON RECUPERE L'ANCRE LA PLUS PROCHE
+            for (int i = 1; i < snapAnchors.Length; i++)
+            {
+                float _curdistance = Vector3.Distance(lastHitPos, snapAnchors[i].position) ;
+                if (_curdistance < _smallestdistance)
+                {
+                    _smallestdistance = _curdistance;
+                    _closestAnchor = snapAnchors[i];
+                }
+            }
+
+
+
+
+            //snap avec une certaine vitesse vers le point d'ancrage
+            if (_smallestdistance < snapDistance)
+            {
+                //lerp = smooth
+                anchor.position = Vector3.Lerp(anchor.position, _closestAnchor.position, Time.deltaTime * snapSpeed);
+
+            }
+            else
+            {
+                //follow avec une certaine vitesse en dehors des points d'ancrage
+                anchor.position = Vector3.Lerp(anchor.position, lastHitPos, Time.deltaTime * followSpeed);
+            }
+
+
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////
         }
         else
         {
-            //snap avec une certaine vitesse en dehors du point d'ancrage
             anchor.position = Vector3.Lerp(anchor.position, lastHitPos, Time.deltaTime * followSpeed);
         }
-
 
     }
 
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        Debug.Log("oui-oui");
+        //Debug.Log("oui-oui");
         
         
     }
@@ -97,7 +134,7 @@ public class test : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
     public void OnDrag(PointerEventData eventData)
     {
-        Debug.Log("babar");
+        //Debug.Log("babar");
 
     
 
@@ -111,7 +148,7 @@ public class test : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         if (Physics.Raycast(cam.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, layerMask))
         {
             Debug.DrawRay(cam.ScreenPointToRay(Input.mousePosition).origin, cam.ScreenPointToRay(Input.mousePosition).direction * hit.distance, Color.yellow);
-            Debug.Log("Did Hit");
+            //Debug.Log("Did Hit");
 
             lastHitPos = hit.point;
             
@@ -120,7 +157,7 @@ public class test : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        Debug.Log("Casimir");
+        //Debug.Log("Casimir");
         
         if (engrenageCasserCheck.transform.tag == "engrenageCasser")
        {
@@ -129,10 +166,18 @@ public class test : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
         if (engrenageCasserCheck.transform.tag == "Jerican")
         {
-            Debug.Log("jericanLacher");
+            //Debug.Log("jericanLacher");
             //engrenageCasserCheck.transform.position = Vector3.Lerp(anchor.position, slot.transform.position, Time.deltaTime * 40);
             lastHitPos = slot.transform.position;
             //anchor.position = Vector3.Lerp(anchor.position, snapAnchor.position, Time.deltaTime * snapSpeed);
+
         }
+
+        //if (engrenageCasserCheck.transform.tag == "Jerican")
+         //{
+
+            
+
+        //}
     }
 }

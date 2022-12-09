@@ -27,6 +27,9 @@ public class Button : MonoBehaviour {
 
     
     [SerializeField]
+    GameObject Enigme;
+
+    [SerializeField]
     GameObject panel;
 
     [SerializeField]
@@ -79,7 +82,8 @@ public class Button : MonoBehaviour {
 
         //Debug.Log("back");
 
-        panel.SetActive(false);
+        Enigme.SetActive(false);
+        //panel.SetActive(false);
         backBouton.SetActive(false);
         rightBouton.SetActive(false);
         leftBouton.SetActive(false);

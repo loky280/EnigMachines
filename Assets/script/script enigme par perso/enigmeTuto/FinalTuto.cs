@@ -6,22 +6,38 @@ public class FinalTuto : MonoBehaviour
 {
     [SerializeField]
     GameObject Recompence;
-    
+
+    [SerializeField]
+    GameObject okBoutton;
 
     public enigmeCondition enigmeCondition;
-    
-    
-    
+
+    public void Start()
+    {
+        Recompence.SetActive(false);
+
+    }
+
+
     public void Final()
     {
-        Debug.Log("test");
+        //Debug.Log("test");
 
         if(enigmeCondition.winPanel1 == true && enigmeCondition.winPanel2 && enigmeCondition.winPanel3)
         {
             Recompence.SetActive(true);
-
+            okBoutton.SetActive(true);
         }
     }
 
-   
+    public void OkButton()
+    {
+        //Debug.Log("test");
+        okBoutton.SetActive(false);
+        Recompence.SetActive(false);
+
+        }
+    
+
+
 }
