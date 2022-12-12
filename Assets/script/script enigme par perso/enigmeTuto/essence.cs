@@ -42,12 +42,19 @@ public class essence : MonoBehaviour
             particuleEssence.Play();
 
         }
-        /*
-         if (Vector3.Distance(particuleEssence.transform.position, CheckJericanPosition.transform.position) >= 3f)
-        {
-            //particuleEssence.SetActive(false);
-            particuleEssence.Stop();
 
-        }*/
+        if (Vector3.Distance(jerican.transform.position, CheckJericanPosition.transform.position) >= 3f && wasPlaying == true)
+        {
+            wasPlaying = false;
+
+            particuleEssence.Stop();
+            /*
+             if (Vector3.Distance(particuleEssence.transform.position, CheckJericanPosition.transform.position) >= 3f)
+            {
+                //particuleEssence.SetActive(false);
+                particuleEssence.Stop();
+
+            }*/
+        }
     }
 }
