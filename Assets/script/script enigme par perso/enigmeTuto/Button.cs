@@ -11,7 +11,7 @@ public class Button : MonoBehaviour {
 
     // public Transform panels;
 
-    DialogueEtTuto dialogueEtTuto;
+    //DialogueEtTuto dialogueEtTuto;
 
 
 
@@ -107,7 +107,7 @@ public class Button : MonoBehaviour {
             panel.transform.Translate(27, 0, 0);
             gaucheDroite = 1;
             
-            dialogueEtTuto.ActiveDialogue2 = true;
+            //dialogueEtTuto.ActiveDialogue2 = true;
             //dialogueEtTuto.buttonPasserAutorisation = true;
 
             /*
@@ -140,7 +140,7 @@ public class Button : MonoBehaviour {
         //Debug.Log("left");
         if (gaucheDroite != 2)
         {
-            dialogueEtTuto.ActiveDialogue3 = true;
+            //dialogueEtTuto.ActiveDialogue3 = true;
             //dialogueEtTuto.buttonPasserAutorisation = true;
 
             gaucheDroite = 2;
