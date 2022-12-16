@@ -109,12 +109,17 @@ public class enigmeCondition : MonoBehaviour
     [SerializeField]
     GameObject CheckJericanPosition;
 
-    public float essence;
+    [SerializeField]
+    GameObject Liquide;
+
+    public float essence = 0f;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Liquide.transform.localScale = new Vector3(6f, 3f, 0f);
+
+
         //VectorEngrenageCasser = new Vector3(0, -17, -58);
 
         //engrenageCasser.transform.position = Vector3.Lerp(engrenageCasser.transform.position, PTSEncrage1.transform.position,50f);
@@ -177,6 +182,11 @@ public class enigmeCondition : MonoBehaviour
         {
 
             essence += 1 * Time.deltaTime;
+
+            if (essence <= 8) { 
+                Liquide.transform.localScale = new Vector3(6f, 3f, essence/4);
+            }
+
             //Enremplissage = true;
             if (essence >= 8)
             {

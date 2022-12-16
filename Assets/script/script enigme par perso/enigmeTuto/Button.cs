@@ -11,6 +11,8 @@ public class Button : MonoBehaviour {
 
     // public Transform panels;
 
+    DialogueEtTuto dialogueEtTuto;
+
 
 
     [SerializeField]
@@ -93,31 +95,36 @@ public class Button : MonoBehaviour {
         public void rightButton()
         {
 
+        
+
         //Debug.Log("right");
         //panels.position = Vector3.Lerp(panel.transform.Translate(27, 0, 0)), Time.deltaTime * snapSpeed);
 
         //panels.position = Vector3.Lerp.(panel.transform.Translate(27,0,0), Time.deltaTime* snapSpeed);
         //positiondroite = Lerp.(0, 27, Time.deltaTime * snapSpeed);
-        
+
         if (gaucheDroite != 1){ 
             panel.transform.Translate(27, 0, 0);
             gaucheDroite = 1;
             
-/*
-           DragAndDropPanel1.SetActive(false);
-           DragAndDropPanel2.SetActive(true);
+            dialogueEtTuto.ActiveDialogue2 = true;
+            //dialogueEtTuto.buttonPasserAutorisation = true;
 
+            /*
+                       DragAndDropPanel1.SetActive(false);
+                       DragAndDropPanel2.SetActive(true);
+
+                    }
+
+                    else
+                    {
+                        DragAndDropPanel2.SetActive(false);
+                       */
         }
+        //panel.transform.position = Vector3.Lerp.(panel.transform.position, VectorPanel, 10f);
 
-        else
-        {
-            DragAndDropPanel2.SetActive(false);
-           */
-        }
-            //panel.transform.position = Vector3.Lerp.(panel.transform.position, VectorPanel, 10f);
 
-        
-   }
+    }
    /*
    panel.position = Vector3.Lerp(panel.position, panel.position.x=+27, Time.deltaTime* snapSpeed);
 
@@ -133,6 +140,9 @@ public class Button : MonoBehaviour {
         //Debug.Log("left");
         if (gaucheDroite != 2)
         {
+            dialogueEtTuto.ActiveDialogue3 = true;
+            //dialogueEtTuto.buttonPasserAutorisation = true;
+
             gaucheDroite = 2;
             panel.transform.Translate(-27, 0, 0);
         }
