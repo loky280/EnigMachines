@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class Interaction : MonoBehaviour {
 
+    DialogueEtTuto dialogueEtTuto;
+
     // Variables
     [SerializeField]
     GameObject enigme;
@@ -58,7 +60,7 @@ public class Interaction : MonoBehaviour {
         if(Physics.Raycast(camera.ScreenPointToRay(Input.mousePosition),out hit)) {
             if (hit.transform.tag == "machiniste1")
             {
-
+                dialogueEtTuto.ActiveDialogue1.SetActive(true);
                 enigme.SetActive(true);
                 backButton.SetActive(true);
                 leftButton.SetActive(true);
