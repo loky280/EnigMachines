@@ -43,9 +43,13 @@ public class DialogueEtTuto : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        FinDialogue = false;
         dialogueMoinUn = 0;
         dialogue = 0;
-        dialoguepackage[0].SetActive(false);
+        //buttonPasser.SetActive(false);
+        //dialogueUI.SetActive(false);
+        //dialoguepackage[0].SetActive(false);
+        dialoguepackage[0].SetActive(true);
         dialoguepackage[1].SetActive(false);
         dialoguepackage[2].SetActive(false);
         dialoguepackage[3].SetActive(false);
@@ -79,10 +83,7 @@ public class DialogueEtTuto : MonoBehaviour
             dialoguepackage[dialogueMoinUn].SetActive(false);
             dialoguepackage[dialogue].SetActive(true);
         
-            if (FinDialogue == true) {
-                disparitionDialogue();
-                //buttonPasserAutorisation = false;
-            }
+           
         }
     }
 
