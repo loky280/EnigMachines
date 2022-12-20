@@ -95,18 +95,22 @@ public class Button : MonoBehaviour {
         public void rightButton()
         {
 
-        
-
         //Debug.Log("right");
         //panels.position = Vector3.Lerp(panel.transform.Translate(27, 0, 0)), Time.deltaTime * snapSpeed);
 
         //panels.position = Vector3.Lerp.(panel.transform.Translate(27,0,0), Time.deltaTime* snapSpeed);
         //positiondroite = Lerp.(0, 27, Time.deltaTime * snapSpeed);
 
-        if (gaucheDroite != 1){ 
+        if (gaucheDroite != 1)
+        {
             panel.transform.Translate(27, 0, 0);
             gaucheDroite = 1;
+
+        
             
+               
+            
+
             //dialogueEtTuto.ActiveDialogue2 = true;
             //dialogueEtTuto.buttonPasserAutorisation = true;
 

@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class Interaction : MonoBehaviour {
 
-    //DialogueEtTuto dialogueEtTuto;
+    DialogueEtTuto dialogueEtTuto;
 
     // Variables
     [SerializeField]
@@ -39,6 +39,10 @@ public class Interaction : MonoBehaviour {
     public void Start(){
 
         VectorCam = new Vector3(-183, -17, -58);
+
+        Camera camera = Camera.main;
+        camera.transform.Translate(VectorCam);
+        camera.transform.rotation = Quaternion.Euler(13, 41, 0);
 
         enigme.SetActive(false);
         backButton.SetActive(false);
@@ -75,7 +79,6 @@ public class Interaction : MonoBehaviour {
                 Debug.Log("porteInterieur");
 
                 camera.transform.Translate(VectorCam);
-                
                 camera.transform.rotation = Quaternion.Euler(13, 41, 0);
 
             }

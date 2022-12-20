@@ -5,17 +5,22 @@ using UnityEngine;
 
 public class DialogueEtTuto : MonoBehaviour
 {
-    public bool ActiveDialogue1;
+    public bool FinDialogue;
+    
+    //public bool ActiveDialogue1;
+    
+    //public bool ActiveDialogue2;
 
-    public bool ActiveDialogue2;
-
-    public bool ActiveDialogue3;
+    //public bool ActiveDialogue3;
 
     //public bool buttonPasserAutorisation;
-
+    
     [SerializeField]
     GameObject buttonPasser;
 
+    [SerializeField]
+    GameObject dialogueUI;
+    /*
     [SerializeField]
     GameObject dialoguepackage0;
 
@@ -27,27 +32,36 @@ public class DialogueEtTuto : MonoBehaviour
     
     [SerializeField]
     GameObject dialoguepackage3;
+    */
 
-
-    //[SerializeField]
-    //GameObject[] dialoguepackage;
+    [SerializeField]
+    GameObject[] dialoguepackage;
 
     public int dialogue;
+    public int dialogueMoinUn;
 
     // Start is called before the first frame update
     void Start()
     {
+        dialogueMoinUn = 0;
         dialogue = 0;
+        dialoguepackage[0].SetActive(false);
+        dialoguepackage[1].SetActive(false);
+        dialoguepackage[2].SetActive(false);
+        dialoguepackage[3].SetActive(false);
+        //dialoguepackage[4].SetActive(false);
+        //dialoguepackage[5].SetActive(false);
+
         //dialoguepackage1.SetActive(true);
 
         //buttonPasserAutorisation = true;
-        ActiveDialogue1 = false;
-        ActiveDialogue3 = false;
-        ActiveDialogue2 = false;
-        dialoguepackage0.SetActive(false);
+        //ActiveDialogue1 = false;
+        //ActiveDialogue3 = false;
+        //ActiveDialogue2 = false;
+        //dialoguepackage0.SetActive(false);
         //dialoguepackage1.SetActive(false);
-        dialoguepackage2.SetActive(false);
-        dialoguepackage3.SetActive(false);
+        //dialoguepackage2.SetActive(false);
+        //dialoguepackage3.SetActive(false);
     }
 
 
@@ -56,13 +70,36 @@ public class DialogueEtTuto : MonoBehaviour
     public void passageDeDialogueButton()
     {
         Debug.Log("test");
-        dialogue =+1;
+        
+        dialogueMoinUn = dialogue;
+        dialogue += 1;
+
+        if (dialogue <= 3)
+        {
+            dialoguepackage[dialogueMoinUn].SetActive(false);
+            dialoguepackage[dialogue].SetActive(true);
+        
+            if (FinDialogue == true) {
+                disparitionDialogue();
+                //buttonPasserAutorisation = false;
+            }
+        }
+    }
+
+    public void disparitionDialogue()
+    {
         buttonPasser.SetActive(false);
-        //buttonPasserAutorisation = false;
+        dialogueUI.SetActive(false);
+        dialoguepackage[dialogue].SetActive(false);
     }
 
 
-
+    public void apparitionDialogue()
+    {
+        buttonPasser.SetActive(true);
+        dialogueUI.SetActive(true);
+        dialoguepackage[dialogue].SetActive(true);
+    }
     //public void passageDeDialogue (){
 
     //dialoguepackage1.SetActive(false);
@@ -77,31 +114,59 @@ public class DialogueEtTuto : MonoBehaviour
 
         //if (buttonPasserAutorisation == true)
         //{
-            //buttonPasser.SetActive(true);
+        //buttonPasser.SetActive(true);
 
         //}
+        //if dialogue =
+            //dialoguepackage[dialogue].SetActive(true);
 
-        if (dialogue > 0)
+       
+
+        /*
+        if (dialogue == 0)
         {
             //passageDeDialogue();
-            dialoguepackage1.SetActive(false);
+            dialoguepackage[0].SetActive(true);
             
         }
         
-        else if (dialogue > 1)
+        else if (dialogue == 1)
         {
             //passageDeDialogue();
-            dialoguepackage2.SetActive(false);
+            dialoguepackage[1].SetActive(true);
 
         }
 
-        else if (dialogue > 2)
+        else if (dialogue == 2)
         {
             //passageDeDialogue();
-            dialoguepackage3.SetActive(false);
+            dialoguepackage[2].SetActive(true);
+
+        }
+
+
+        else if (dialogue == 3)
+        {
+            //passageDeDialogue();
+            dialoguepackage[3].SetActive(true);
 
         }
         
+        else if (dialogue == 4)
+        {
+            //passageDeDialogue();
+            dialoguepackage[4].SetActive(true);
+
+        }
+
+        else if (dialogue == 5)
+        {
+            //passageDeDialogue();
+            dialoguepackage[5].SetActive(true);
+
+        }
+        */
+        /*
         //_____________________________________________________________
         if (ActiveDialogue1 == true)
         {
@@ -120,6 +185,6 @@ public class DialogueEtTuto : MonoBehaviour
             //passageDeDialogue();
             dialoguepackage3.SetActive(true);
         }
-
+        */
     }
 }
