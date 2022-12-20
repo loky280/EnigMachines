@@ -475,7 +475,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: enigme1
+  m_text: "Ah bonjour Samuel ! Je t\u2019attendais, ravie de te rencontrer !\r"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -769,7 +769,8 @@ RectTransform:
   - {fileID: 1959253091}
   - {fileID: 1440551101}
   - {fileID: 1498567271}
-  - {fileID: 1762558710}
+  - {fileID: 1672596041}
+  - {fileID: 742862433}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -809,7 +810,7 @@ MonoBehaviour:
   buttonPasser: {fileID: 1498567270}
   dialogueUI: {fileID: 1672596040}
   dialoguepackage:
-  - {fileID: 742862432}
+  - {fileID: 115275885}
   - {fileID: 806490713}
   - {fileID: 298122515}
   - {fileID: 1069155375}
@@ -6080,12 +6081,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 298122515}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 16.500002, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1170870126}
-  m_Father: {fileID: 1762558710}
+  m_Father: {fileID: 742862433}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &343956884
@@ -7956,9 +7957,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Bonjour et bienvenue dans la Halle de la machine pour commencer cliquer
-    sur la premi\xE8re \xE9nigme afin que je puisse vous montrer en quoi consiste
-    notre travail. "
+  m_text: "Bonjour, ravi de vous rencontrer de m\xEAme"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8944,12 +8943,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 728877201}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 16.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1425759956}
-  m_Father: {fileID: 1762558710}
+  m_Father: {fileID: 742862433}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &742862432
@@ -8961,29 +8960,60 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 742862433}
+  - component: {fileID: 742862434}
   m_Layer: 0
-  m_Name: dialogue0
+  m_Name: dialogue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &742862433
-Transform:
+--- !u!224 &742862433
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 742862432}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 16.500002, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3.3507853, y: 3.3507853, z: 3.3507853}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 115275886}
-  m_Father: {fileID: 1762558710}
-  m_RootOrder: 0
+  - {fileID: 806490714}
+  - {fileID: 298122516}
+  - {fileID: 1069155376}
+  - {fileID: 728877202}
+  m_Father: {fileID: 136981545}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -960, y: -472}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!223 &742862434
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742862432}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 1
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_SortingLayerID: 0
+  m_SortingOrder: 22
+  m_TargetDisplay: 0
 --- !u!1 &747762406 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3cb88fdaaffc38b45af26d79052cc14b,
@@ -9093,12 +9123,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 806490713}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 16.500002, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 604290778}
-  m_Father: {fileID: 1762558710}
+  m_Father: {fileID: 742862433}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &812003684
@@ -10980,12 +11010,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1069155375}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 16.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1804911029}
-  m_Father: {fileID: 1762558710}
+  m_Father: {fileID: 742862433}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1105402470
@@ -11209,9 +11239,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'enigme2
-
-'
+  m_text: "Voyons tu peux me tutoyer, je m\u2019appelle \u2018Anna\u2019, nous sommes
+    coll\xE8gues maintenant."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -12386,7 +12415,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1425759956
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13854,7 +13883,7 @@ GameObject:
   - component: {fileID: 1672596043}
   - component: {fileID: 1672596042}
   m_Layer: 5
-  m_Name: Image
+  m_Name: dialogueUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13869,15 +13898,15 @@ RectTransform:
   m_GameObject: {fileID: 1672596040}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6995074, y: 0.6995074, z: 0.6995074}
+  m_LocalScale: {x: 2.3438993, y: 2.3438993, z: 2.3438993}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1762558710}
-  m_RootOrder: 5
+  m_Father: {fileID: 136981545}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 286.5, y: 130.90155}
+  m_AnchoredPosition: {x: 0, y: -74}
   m_SizeDelta: {x: 812, y: 345}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1672596042
@@ -14084,43 +14113,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1707256130}
   m_CullTransparentMesh: 1
---- !u!1 &1762558709
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1762558710}
-  m_Layer: 0
-  m_Name: dialogue
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1762558710
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1762558709}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -960, y: -576.3351, z: 0}
-  m_LocalScale: {x: 3.3507853, y: 3.3507853, z: 3.3507853}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 742862433}
-  - {fileID: 806490714}
-  - {fileID: 298122516}
-  - {fileID: 1069155376}
-  - {fileID: 728877202}
-  - {fileID: 1672596041}
-  m_Father: {fileID: 136981545}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1771693334
 GameObject:
   m_ObjectHideFlags: 0
@@ -14667,9 +14659,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'enigme3
-
-'
+  m_text: "Pour ton premier jour ici, je vais t\u2019expliquer le travail d\u2019un
+    Machiniste."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
