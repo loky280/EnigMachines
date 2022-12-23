@@ -52,13 +52,26 @@ public class DialogueEtTuto : MonoBehaviour
         //buttonPasser.SetActive(false);
         //dialogueUI.SetActive(false);
         //dialoguepackage[0].SetActive(false);
-        dialoguepackage[0].SetActive(true);
+
+        disparitionDialogue();
+        dialoguepackage[0].SetActive(false);
         dialoguepackage[1].SetActive(false);
         dialoguepackage[2].SetActive(false);
         dialoguepackage[3].SetActive(false);
         dialoguepackage[4].SetActive(false);
-        //dialoguepackage[5].SetActive(false);
-
+        dialoguepackage[5].SetActive(false);
+        
+        dialoguepackage[6].SetActive(false);
+        dialoguepackage[7].SetActive(false);
+        dialoguepackage[8].SetActive(false);
+        dialoguepackage[9].SetActive(false);
+        dialoguepackage[10].SetActive(false);
+        dialoguepackage[11].SetActive(false);
+        
+        dialoguepackage[12].SetActive(false);
+        dialoguepackage[13].SetActive(false);
+        dialoguepackage[14].SetActive(false);
+        dialoguepackage[15].SetActive(false);
         //dialoguepackage1.SetActive(true);
 
         //buttonPasserAutorisation = true;
@@ -82,7 +95,7 @@ public class DialogueEtTuto : MonoBehaviour
         //dialogue suivant
         dialogue += 1;
 
-        if (dialogue <= 4)
+        if (dialogue <15)
         {
             //_______________________changement de dialogue precedent avec le suivant
             dialoguepackage[dialogueMoinUn].SetActive(false);
@@ -92,12 +105,16 @@ public class DialogueEtTuto : MonoBehaviour
         }
         
         //___________________________________________condition de disparition des dialogue
-        if (dialogue == 4)
+        if (dialogue == 5)
         {
             disparitionDialogue();
         }
 
-        
+        if (dialogue == 15)
+        {
+            disparitionDialogue();
+        }
+
         /*
         else if (debutDialogue == true)
         {

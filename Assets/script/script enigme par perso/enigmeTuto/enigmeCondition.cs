@@ -117,6 +117,8 @@ public class enigmeCondition : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+
         Liquide.transform.localScale = new Vector3(6f, 3f, 0f);
 
 

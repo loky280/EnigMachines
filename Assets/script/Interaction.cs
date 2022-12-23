@@ -67,6 +67,7 @@ public class Interaction : MonoBehaviour {
                 
                 dialogueEtTuto.apparitionDialogue();
                 
+
                 enigme.SetActive(true);
                 backButton.SetActive(true);
                 leftButton.SetActive(true);
@@ -91,6 +92,10 @@ public class Interaction : MonoBehaviour {
               
                 camera.transform.rotation = Quaternion.Euler(32, 0, 0);
                 camera.transform.Translate(VectorCam * -1);
+
+                if (dialogueEtTuto.dialogue == 0) { 
+                dialogueEtTuto.apparitionDialogue();
+                }
             }
 
         }
