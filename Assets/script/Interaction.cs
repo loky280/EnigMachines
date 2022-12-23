@@ -65,7 +65,8 @@ public class Interaction : MonoBehaviour {
             if (hit.transform.tag == "machiniste1")
             {
                 
-                //dialogueEtTuto.ActiveDialogue1.SetActive(true);
+                dialogueEtTuto.apparitionDialogue();
+                
                 enigme.SetActive(true);
                 backButton.SetActive(true);
                 leftButton.SetActive(true);

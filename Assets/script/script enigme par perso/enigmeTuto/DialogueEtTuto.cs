@@ -45,8 +45,8 @@ public class DialogueEtTuto : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        debutDialogue = false;
-        FinDialogue = false;
+        //debutDialogue = false;
+        //FinDialogue = false;
         dialogueMoinUn = 0;
         dialogue = 0;
         //buttonPasser.SetActive(false);
@@ -56,7 +56,7 @@ public class DialogueEtTuto : MonoBehaviour
         dialoguepackage[1].SetActive(false);
         dialoguepackage[2].SetActive(false);
         dialoguepackage[3].SetActive(false);
-        //dialoguepackage[4].SetActive(false);
+        dialoguepackage[4].SetActive(false);
         //dialoguepackage[5].SetActive(false);
 
         //dialoguepackage1.SetActive(true);
@@ -82,7 +82,7 @@ public class DialogueEtTuto : MonoBehaviour
         //dialogue suivant
         dialogue += 1;
 
-        if (dialogue <= 3)
+        if (dialogue <= 4)
         {
             //_______________________changement de dialogue precedent avec le suivant
             dialoguepackage[dialogueMoinUn].SetActive(false);
@@ -92,23 +92,22 @@ public class DialogueEtTuto : MonoBehaviour
         }
         
         //___________________________________________condition de disparition des dialogue
-        else if (FinDialogue == true)
+        if (dialogue == 4)
         {
             disparitionDialogue();
         }
 
+        
+        /*
         else if (debutDialogue == true)
         {
             apparitionDialogue();
         }
+        */
 
-        //______________________________________situation de disparition de dialogue
 
-        else if (dialogue == 3)
-        {
-            FinDialogue = true;
-        }
-        
+
+
     }
 
     public void disparitionDialogue()
@@ -135,8 +134,12 @@ public class DialogueEtTuto : MonoBehaviour
 
     void Update()
     {
-        
-      
+        /*
+        if (dialogue == 3)
+        {
+            disparitionDialogue();
+        }
+        */
 
         //if (buttonPasserAutorisation == true)
         //{
@@ -144,9 +147,9 @@ public class DialogueEtTuto : MonoBehaviour
 
         //}
         //if dialogue =
-            //dialoguepackage[dialogue].SetActive(true);
+        //dialoguepackage[dialogue].SetActive(true);
 
-       
+
 
         /*
         if (dialogue == 0)
