@@ -23,7 +23,7 @@ public class FinalTuto : MonoBehaviour
     {
         //Debug.Log("test");
 
-        if(enigmeCondition.winPanel1 == true && enigmeCondition.winPanel2 && enigmeCondition.winPanel3)
+        if(enigmeCondition.winPanel1 == true && enigmeCondition.winPanel2 == true && enigmeCondition.winPanel3 == true)
         {
             Recompence.SetActive(true);
             okBoutton.SetActive(true);

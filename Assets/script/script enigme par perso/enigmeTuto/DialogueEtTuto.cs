@@ -6,15 +6,16 @@ using UnityEngine;
 public class DialogueEtTuto : MonoBehaviour
 {
     public bool FinDialogue;
-    
+
+    public bool debutDialogue;
     //public bool ActiveDialogue1;
-    
+
     //public bool ActiveDialogue2;
 
     //public bool ActiveDialogue3;
 
     //public bool buttonPasserAutorisation;
-    
+
     [SerializeField]
     GameObject buttonPasser;
 
@@ -40,9 +41,11 @@ public class DialogueEtTuto : MonoBehaviour
     public int dialogue;
     public int dialogueMoinUn;
 
+
     // Start is called before the first frame update
     void Start()
     {
+        debutDialogue = false;
         FinDialogue = false;
         dialogueMoinUn = 0;
         dialogue = 0;
@@ -73,18 +76,39 @@ public class DialogueEtTuto : MonoBehaviour
 
     public void passageDeDialogueButton()
     {
-        Debug.Log("test");
-        
+        //dialogue précédent
         dialogueMoinUn = dialogue;
+        
+        //dialogue suivant
         dialogue += 1;
 
         if (dialogue <= 3)
         {
+            //_______________________changement de dialogue precedent avec le suivant
             dialoguepackage[dialogueMoinUn].SetActive(false);
             dialoguepackage[dialogue].SetActive(true);
         
            
         }
+        
+        //___________________________________________condition de disparition des dialogue
+        else if (FinDialogue == true)
+        {
+            disparitionDialogue();
+        }
+
+        else if (debutDialogue == true)
+        {
+            apparitionDialogue();
+        }
+
+        //______________________________________situation de disparition de dialogue
+
+        else if (dialogue == 3)
+        {
+            FinDialogue = true;
+        }
+        
     }
 
     public void disparitionDialogue()
@@ -111,7 +135,8 @@ public class DialogueEtTuto : MonoBehaviour
 
     void Update()
     {
-
+        
+      
 
         //if (buttonPasserAutorisation == true)
         //{

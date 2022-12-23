@@ -11,7 +11,7 @@ public class Button : MonoBehaviour {
 
     // public Transform panels;
 
-    //DialogueEtTuto dialogueEtTuto;
+    public DialogueEtTuto dialogueEtTuto;
 
 
 
@@ -83,7 +83,9 @@ public class Button : MonoBehaviour {
     {
 
         //Debug.Log("back");
-
+        
+        
+        
         Enigme.SetActive(false);
         //panel.SetActive(false);
         backBouton.SetActive(false);

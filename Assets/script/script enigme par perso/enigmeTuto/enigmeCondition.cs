@@ -15,7 +15,7 @@ public class enigmeCondition : MonoBehaviour
 
        //====================================================< enigmetuto Panel 1>
        //_______________Point d'ancrage
-       [SerializeField]
+    [SerializeField]
     GameObject PTSEncrage1;
 
     [SerializeField]
