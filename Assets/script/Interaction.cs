@@ -64,9 +64,9 @@ public class Interaction : MonoBehaviour {
         if(Physics.Raycast(camera.ScreenPointToRay(Input.mousePosition),out hit)) {
             if (hit.transform.tag == "machiniste1")
             {
-                
-                dialogueEtTuto.apparitionDialogue();
-                
+
+                if (dialogueEtTuto.disparue == true) { dialogueEtTuto.apparitionDialogue(); }
+
 
                 enigme.SetActive(true);
                 backButton.SetActive(true);

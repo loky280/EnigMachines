@@ -7,6 +7,9 @@ public class DialogueEtTuto : MonoBehaviour
 {
     public bool FinDialogue;
 
+    [SerializeField]
+    public bool disparue;
+    
     public bool debutDialogue;
     //public bool ActiveDialogue1;
 
@@ -35,8 +38,11 @@ public class DialogueEtTuto : MonoBehaviour
     GameObject dialoguepackage3;
     */
 
+    //[SerializeField]
+    //GameObject[] dialoguepackage;
+
     [SerializeField]
-    GameObject[] dialoguepackage;
+    List<GameObject> dialoguepackage = new List<GameObject>();
 
     public int dialogue;
     public int dialogueMoinUn;
@@ -45,6 +51,9 @@ public class DialogueEtTuto : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //nomDeLaListe.Add(element1);
+        //dialoguepackage.Add();
+        //dialoguepackage.add
         //debutDialogue = false;
         //FinDialogue = false;
         dialogueMoinUn = 0;
@@ -72,6 +81,7 @@ public class DialogueEtTuto : MonoBehaviour
         dialoguepackage[13].SetActive(false);
         dialoguepackage[14].SetActive(false);
         dialoguepackage[15].SetActive(false);
+        //dialoguepackage[16].SetActive(false);
         //dialoguepackage1.SetActive(true);
 
         //buttonPasserAutorisation = true;
@@ -105,7 +115,7 @@ public class DialogueEtTuto : MonoBehaviour
         }
         
         //___________________________________________condition de disparition des dialogue
-        if (dialogue == 5)
+        if (dialogue == 5 || dialogue == 6 || dialogue == 7 || dialogue == 8 || dialogue == 9 || dialogue == 10 || dialogue == 11 || dialogue == 12 || dialogue == 13 )
         {
             disparitionDialogue();
         }
@@ -129,6 +139,7 @@ public class DialogueEtTuto : MonoBehaviour
 
     public void disparitionDialogue()
     {
+        disparue = true;
         buttonPasser.SetActive(false);
         dialogueUI.SetActive(false);
         dialoguepackage[dialogue].SetActive(false);
@@ -137,6 +148,7 @@ public class DialogueEtTuto : MonoBehaviour
 
     public void apparitionDialogue()
     {
+        disparue = false;
         buttonPasser.SetActive(true);
         dialogueUI.SetActive(true);
         dialoguepackage[dialogue].SetActive(true);

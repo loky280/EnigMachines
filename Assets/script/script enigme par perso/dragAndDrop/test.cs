@@ -9,7 +9,8 @@ using static UnityEngine.Rendering.DebugUI;
 
 public class test : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
- 
+
+    public DialogueEtTuto dialogueEtTuto;
 
     public Transform anchor;
 
@@ -161,7 +162,8 @@ public class test : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         
         if (engrenageCasserCheck.transform.tag == "engrenageCasser")
        {
-          engrenageCasserCheck.SetActive(false);
+            engrenageCasserCheck.SetActive(false);
+            if (dialogueEtTuto.disparue == true) { dialogueEtTuto.apparitionDialogue(); }
         }
 
         if (engrenageCasserCheck.transform.tag == "Jerican")

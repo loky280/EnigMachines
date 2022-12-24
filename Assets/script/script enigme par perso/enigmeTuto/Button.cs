@@ -11,7 +11,7 @@ public class Button : MonoBehaviour {
 
     // public Transform panels;
 
-    //public DialogueEtTuto dialogueEtTuto;
+    public DialogueEtTuto dialogueEtTuto;
 
 
 
@@ -109,7 +109,7 @@ public class Button : MonoBehaviour {
         if (gaucheDroite != 1){ 
             panel.transform.Translate(27, 0, 0);
             gaucheDroite = 1;
-            
+            if (dialogueEtTuto.disparue == true) { dialogueEtTuto.apparitionDialogue(); }
             //dialogueEtTuto.ActiveDialogue2 = true;
             //dialogueEtTuto.buttonPasserAutorisation = true;
 
@@ -148,6 +148,7 @@ public class Button : MonoBehaviour {
 
             gaucheDroite = 2;
             panel.transform.Translate(-27, 0, 0);
+            if (dialogueEtTuto.disparue == true) { dialogueEtTuto.apparitionDialogue(); }
         }
 
    }

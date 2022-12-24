@@ -12,9 +12,10 @@ public class enigmeCondition : MonoBehaviour
     public Boolean winPanel3;
 
     //public Boolean Enremplissage;
+    public DialogueEtTuto dialogueEtTuto;
 
-       //====================================================< enigmetuto Panel 1>
-       //_______________Point d'ancrage
+    //====================================================< enigmetuto Panel 1>
+    //_______________Point d'ancrage
     [SerializeField]
     GameObject PTSEncrage1;
 
@@ -149,7 +150,8 @@ public class enigmeCondition : MonoBehaviour
             Greenlight1.SetActive(true);
             GreenlightBouton2.SetActive(true);
             redlightBouton2.SetActive(false);
-
+            if (dialogueEtTuto.disparue == true) { dialogueEtTuto.apparitionDialogue(); }
+            
 
         }
 
@@ -162,7 +164,7 @@ public class enigmeCondition : MonoBehaviour
             Greenlight1.SetActive(true);
             GreenlightBouton2.SetActive(true);
             redlightBouton2.SetActive(false);
-
+            if (dialogueEtTuto.disparue == true) { dialogueEtTuto.apparitionDialogue(); }
         }
 
         //__________________________________win condition panel 2
@@ -175,6 +177,7 @@ public class enigmeCondition : MonoBehaviour
             Greenlight2.SetActive(true);
             GreenlightBouton3.SetActive(true);
             redlightBouton3.SetActive(false);
+            if (dialogueEtTuto.disparue == true) { dialogueEtTuto.apparitionDialogue(); }
         }
 
         //__________________________________win condition panel 3
@@ -196,6 +199,7 @@ public class enigmeCondition : MonoBehaviour
                 Greenlight3.SetActive(true);
                 GreenlightBouton1.SetActive(true);
                 redlightBouton1.SetActive(false);
+                if (dialogueEtTuto.disparue == true) { dialogueEtTuto.apparitionDialogue(); }
             }
             /* 
         Camera camera = Camera.main;
