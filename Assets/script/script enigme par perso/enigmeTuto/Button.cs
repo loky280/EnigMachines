@@ -13,6 +13,10 @@ public class Button : MonoBehaviour {
 
     public DialogueEtTuto dialogueEtTuto;
 
+    public enigmeCondition enigmeCondition;
+
+    [SerializeField]
+    GameObject BoutonDemarrer;
 
 
     [SerializeField]
@@ -43,7 +47,7 @@ public class Button : MonoBehaviour {
     [SerializeField]
     GameObject rightBouton;
 
-
+    [SerializeField]
     public int gaucheDroite;
     //Vector3 VectorPanel;
     /*
@@ -86,7 +90,7 @@ public class Button : MonoBehaviour {
 
         //dialogueEtTuto.disparitionDialogue();
 
-
+        BoutonDemarrer.SetActive(false);
         Enigme.SetActive(false);
         //panel.SetActive(false);
         backBouton.SetActive(false);
@@ -106,10 +110,13 @@ public class Button : MonoBehaviour {
         //panels.position = Vector3.Lerp.(panel.transform.Translate(27,0,0), Time.deltaTime* snapSpeed);
         //positiondroite = Lerp.(0, 27, Time.deltaTime * snapSpeed);
 
-        if (gaucheDroite != 1){ 
-            panel.transform.Translate(27, 0, 0);
+        if (gaucheDroite != 1){
+            
             gaucheDroite = 1;
-            if (dialogueEtTuto.disparue == true) { dialogueEtTuto.apparitionDialogue(); }
+            panel.transform.Translate(27, 0, 0);
+            
+            
+            
             //dialogueEtTuto.ActiveDialogue2 = true;
             //dialogueEtTuto.buttonPasserAutorisation = true;
 
@@ -143,12 +150,13 @@ public class Button : MonoBehaviour {
         //Debug.Log("left");
         if (gaucheDroite != 2)
         {
+            gaucheDroite = 2;
             //dialogueEtTuto.ActiveDialogue3 = true;
             //dialogueEtTuto.buttonPasserAutorisation = true;
-
-            gaucheDroite = 2;
+           
+            
             panel.transform.Translate(-27, 0, 0);
-            if (dialogueEtTuto.disparue == true) { dialogueEtTuto.apparitionDialogue(); }
+            
         }
 
    }
@@ -171,7 +179,8 @@ public class Button : MonoBehaviour {
 
         //_______________________________________________________
         else if (gaucheDroite == 2) 
-        { 
+        {
+           if (dialogueEtTuto.disparue == true && dialogueEtTuto.dialogue == 11) { dialogueEtTuto.apparitionDialogue(); }
             DragAndDropPanel3.SetActive(true);
             DragAndDropPanel2.SetActive(false);
             DragAndDropPanel1.SetActive(false);
@@ -180,6 +189,7 @@ public class Button : MonoBehaviour {
         //_______________________________________________________
         else if (gaucheDroite == 1)
         {
+            if (dialogueEtTuto.disparue == true && dialogueEtTuto.dialogue == 8 && enigmeCondition.winPanel1 == true) { dialogueEtTuto.apparitionDialogue(); }
             DragAndDropPanel3.SetActive(false);
             DragAndDropPanel2.SetActive(true);
             DragAndDropPanel1.SetActive(false);

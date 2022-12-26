@@ -17,18 +17,21 @@ public class FinalTuto : MonoBehaviour
     public void Start()
     {
         Recompence.SetActive(false);
-        if (dialogueEtTuto.disparue == true) { dialogueEtTuto.apparitionDialogue(); }
+       // if (dialogueEtTuto.disparue == true) { dialogueEtTuto.apparitionDialogue(); }
 
     }
 
 
     public void Final()
     {
-        if (dialogueEtTuto.disparue == true) { dialogueEtTuto.apparitionDialogue(); }
+        if (dialogueEtTuto.disparue == true && dialogueEtTuto.dialogue == 10) { dialogueEtTuto.apparitionDialogue(); }
         //Debug.Log("test");
 
         if (enigmeCondition.winPanel1 == true && enigmeCondition.winPanel2 == true && enigmeCondition.winPanel3 == true)
         {
+            
+            dialogueEtTuto.dialogue = 13;
+            dialogueEtTuto.apparitionDialogue();
             Recompence.SetActive(true);
             okBoutton.SetActive(true);
         }

@@ -113,8 +113,9 @@ public class DialogueEtTuto : MonoBehaviour
         
            
         }
-        
+
         //___________________________________________condition de disparition des dialogue
+        
         if (dialogue == 5 || dialogue == 6 || dialogue == 7 || dialogue == 8 || dialogue == 9 || dialogue == 10 || dialogue == 11 || dialogue == 12 || dialogue == 13 )
         {
             disparitionDialogue();
@@ -139,6 +140,7 @@ public class DialogueEtTuto : MonoBehaviour
 
     public void disparitionDialogue()
     {
+        Debug.Log("disparition");
         disparue = true;
         buttonPasser.SetActive(false);
         dialogueUI.SetActive(false);
@@ -148,6 +150,7 @@ public class DialogueEtTuto : MonoBehaviour
 
     public void apparitionDialogue()
     {
+        Debug.Log("apparition");
         disparue = false;
         buttonPasser.SetActive(true);
         dialogueUI.SetActive(true);

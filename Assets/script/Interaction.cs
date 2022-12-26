@@ -28,6 +28,9 @@ public class Interaction : MonoBehaviour {
     [SerializeField]
     GameObject porteButton;
 
+    [SerializeField]
+    GameObject BoutonDemarrer;
+
     Vector3 VectorCam;
 
     public float xTransform;
@@ -44,6 +47,7 @@ public class Interaction : MonoBehaviour {
         camera.transform.Translate(VectorCam);
         camera.transform.rotation = Quaternion.Euler(13, 41, 0);
 
+        BoutonDemarrer.SetActive(false);
         enigme.SetActive(false);
         backButton.SetActive(false);
         leftButton.SetActive(false);
@@ -65,9 +69,12 @@ public class Interaction : MonoBehaviour {
             if (hit.transform.tag == "machiniste1")
             {
 
-                if (dialogueEtTuto.disparue == true) { dialogueEtTuto.apparitionDialogue(); }
+                if (dialogueEtTuto.disparue == true && dialogueEtTuto.dialogue == 5)
+                {
+                    dialogueEtTuto.apparitionDialogue();
+                }
 
-
+                BoutonDemarrer.SetActive(true);
                 enigme.SetActive(true);
                 backButton.SetActive(true);
                 leftButton.SetActive(true);
@@ -93,8 +100,8 @@ public class Interaction : MonoBehaviour {
                 camera.transform.rotation = Quaternion.Euler(32, 0, 0);
                 camera.transform.Translate(VectorCam * -1);
 
-                if (dialogueEtTuto.dialogue == 0) { 
-                dialogueEtTuto.apparitionDialogue();
+                if (dialogueEtTuto.disparue == true && dialogueEtTuto.dialogue == 0) { 
+                    dialogueEtTuto.apparitionDialogue();
                 }
             }
 
