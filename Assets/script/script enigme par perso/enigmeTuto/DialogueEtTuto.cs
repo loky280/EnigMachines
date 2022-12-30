@@ -102,6 +102,7 @@ public class DialogueEtTuto : MonoBehaviour
         dialoguepackage[13].SetActive(false);
         dialoguepackage[14].SetActive(false);
         dialoguepackage[15].SetActive(false);
+        dialoguepackage[16].SetActive(false);
 
         //________________________________________EN
         dialoguepackageEN[0].SetActive(false);
@@ -122,7 +123,7 @@ public class DialogueEtTuto : MonoBehaviour
         dialoguepackageEN[13].SetActive(false);
         dialoguepackageEN[14].SetActive(false);
         dialoguepackageEN[15].SetActive(false);
-        //dialoguepackage[16].SetActive(false);
+        dialoguepackageEN[16].SetActive(false);
         //dialoguepackage1.SetActive(true);
 
         //buttonPasserAutorisation = true;
@@ -146,7 +147,10 @@ public class DialogueEtTuto : MonoBehaviour
         //dialogue suivant
         dialogue += 1;
 
-        if (dialogue <15 && button.langueFR == true )
+        //changement d'UIdialogue
+        dialogueUI();
+
+        if (dialogue <16 && button.langueFR == true )
         {
             //_______________________changement de dialogue precedent avec le suivant
             dialoguepackage[dialogueMoinUn].SetActive(false);
@@ -155,7 +159,7 @@ public class DialogueEtTuto : MonoBehaviour
            
         }
 
-        if (dialogue < 15 && button.langueFR == false)
+        if (dialogue < 16 && button.langueFR == false)
         {
             //_______________________changement de dialogue precedent avec le suivant
             dialoguepackageEN[dialogueMoinUn].SetActive(false);
@@ -176,9 +180,7 @@ public class DialogueEtTuto : MonoBehaviour
             disparitionDialogue();
         }
 
-        else if (dialogue == 1) { dialogueUI_2.SetActive(true); }
-
-        if (dialogue != 1) { dialogueUI_2.SetActive(false); }
+       
         /*
         else if (debutDialogue == true)
         {
@@ -189,6 +191,13 @@ public class DialogueEtTuto : MonoBehaviour
 
 
 
+    }
+
+    public void dialogueUI()
+    {
+        if (dialogue == 1 || dialogue == 14) { dialogueUI_2.SetActive(true); }
+
+        else  { dialogueUI_2.SetActive(false); }
     }
 
     public void disparitionDialogue()
