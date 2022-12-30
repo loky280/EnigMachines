@@ -23,7 +23,10 @@ public class DialogueEtTuto : MonoBehaviour
     GameObject buttonPasser;
 
     [SerializeField]
-    GameObject dialogueUI;
+    GameObject dialogueUI_1;
+
+    [SerializeField]
+    GameObject dialogueUI_2;
     /*
     [SerializeField]
     GameObject dialoguepackage0;
@@ -44,6 +47,9 @@ public class DialogueEtTuto : MonoBehaviour
     [SerializeField]
     List<GameObject> dialoguepackage = new List<GameObject>();
 
+    [SerializeField]
+    List<GameObject> dialoguepackageEN = new List<GameObject>();
+
     public int dialogue;
     public int dialogueMoinUn;
 
@@ -59,8 +65,9 @@ public class DialogueEtTuto : MonoBehaviour
         dialogueMoinUn = 0;
         dialogue = 0;
         //buttonPasser.SetActive(false);
-        //dialogueUI.SetActive(false);
+        //dialogueUI_1.SetActive(false);
         //dialoguepackage[0].SetActive(false);
+        dialogueUI_2.SetActive(false);
 
         disparitionDialogue();
         dialoguepackage[0].SetActive(false);
@@ -126,6 +133,9 @@ public class DialogueEtTuto : MonoBehaviour
             disparitionDialogue();
         }
 
+        else if (dialogue == 1) { dialogueUI_2.SetActive(true); }
+
+        if (dialogue != 1) { dialogueUI_2.SetActive(false); }
         /*
         else if (debutDialogue == true)
         {
@@ -143,7 +153,7 @@ public class DialogueEtTuto : MonoBehaviour
         Debug.Log("disparition");
         disparue = true;
         buttonPasser.SetActive(false);
-        dialogueUI.SetActive(false);
+        dialogueUI_1.SetActive(false);
         dialoguepackage[dialogue].SetActive(false);
     }
 
@@ -153,7 +163,7 @@ public class DialogueEtTuto : MonoBehaviour
         Debug.Log("apparition");
         disparue = false;
         buttonPasser.SetActive(true);
-        dialogueUI.SetActive(true);
+        dialogueUI_1.SetActive(true);
         dialoguepackage[dialogue].SetActive(true);
     }
     //public void passageDeDialogue (){
