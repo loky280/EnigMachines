@@ -5,11 +5,16 @@ using UnityEngine;
 
 public class DialogueEtTuto : MonoBehaviour
 {
+
+    public Button button;
+
     public bool FinDialogue;
 
+    //___________________UI-Dialogue ==> present ?
     [SerializeField]
     public bool disparue;
     
+
     public bool debutDialogue;
     //public bool ActiveDialogue1;
 
@@ -19,12 +24,16 @@ public class DialogueEtTuto : MonoBehaviour
 
     //public bool buttonPasserAutorisation;
 
+    
     [SerializeField]
     GameObject buttonPasser;
 
+    
+    //___________________Anna Qui parle
     [SerializeField]
     GameObject dialogueUI_1;
 
+    //___________________Samuel Qui parle
     [SerializeField]
     GameObject dialogueUI_2;
     /*
@@ -44,13 +53,18 @@ public class DialogueEtTuto : MonoBehaviour
     //[SerializeField]
     //GameObject[] dialoguepackage;
 
+    //__________________liste texte Francais
     [SerializeField]
     List<GameObject> dialoguepackage = new List<GameObject>();
 
+    //__________________liste texte Englais
     [SerializeField]
     List<GameObject> dialoguepackageEN = new List<GameObject>();
 
+   //________________dialogue precedent
     public int dialogue;
+    
+    //________________dialogue Actuelle
     public int dialogueMoinUn;
 
 
@@ -68,7 +82,7 @@ public class DialogueEtTuto : MonoBehaviour
         //dialogueUI_1.SetActive(false);
         //dialoguepackage[0].SetActive(false);
         dialogueUI_2.SetActive(false);
-
+//_____________________________________________FR
         disparitionDialogue();
         dialoguepackage[0].SetActive(false);
         dialoguepackage[1].SetActive(false);
@@ -88,6 +102,26 @@ public class DialogueEtTuto : MonoBehaviour
         dialoguepackage[13].SetActive(false);
         dialoguepackage[14].SetActive(false);
         dialoguepackage[15].SetActive(false);
+
+        //________________________________________EN
+        dialoguepackageEN[0].SetActive(false);
+        dialoguepackageEN[1].SetActive(false);
+        dialoguepackageEN[2].SetActive(false);
+        dialoguepackageEN[3].SetActive(false);
+        dialoguepackageEN[4].SetActive(false);
+        dialoguepackageEN[5].SetActive(false);
+
+        dialoguepackageEN[6].SetActive(false);
+        dialoguepackageEN[7].SetActive(false);
+        dialoguepackageEN[8].SetActive(false);
+        dialoguepackageEN[9].SetActive(false);
+        dialoguepackageEN[10].SetActive(false);
+        dialoguepackageEN[11].SetActive(false);
+
+        dialoguepackageEN[12].SetActive(false);
+        dialoguepackageEN[13].SetActive(false);
+        dialoguepackageEN[14].SetActive(false);
+        dialoguepackageEN[15].SetActive(false);
         //dialoguepackage[16].SetActive(false);
         //dialoguepackage1.SetActive(true);
 
@@ -150,21 +184,25 @@ public class DialogueEtTuto : MonoBehaviour
 
     public void disparitionDialogue()
     {
+        
         Debug.Log("disparition");
         disparue = true;
         buttonPasser.SetActive(false);
         dialogueUI_1.SetActive(false);
         dialoguepackage[dialogue].SetActive(false);
+        
     }
 
 
     public void apparitionDialogue()
     {
-        Debug.Log("apparition");
-        disparue = false;
-        buttonPasser.SetActive(true);
-        dialogueUI_1.SetActive(true);
-        dialoguepackage[dialogue].SetActive(true);
+        if (button.langueFR == true ) { 
+            Debug.Log("apparition");
+            disparue = false;
+            buttonPasser.SetActive(true);
+            dialogueUI_1.SetActive(true);
+            dialoguepackage[dialogue].SetActive(true);
+        }
     }
     //public void passageDeDialogue (){
 

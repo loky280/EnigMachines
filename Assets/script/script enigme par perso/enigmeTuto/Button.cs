@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using Unity.VisualScripting;
 //using UnityEditor.Presets;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,6 +11,7 @@ using UnityEngine.UI;
 public class Button : MonoBehaviour {
 
     // public Transform panels;
+
 
     public DialogueEtTuto dialogueEtTuto;
 
@@ -37,6 +39,20 @@ public class Button : MonoBehaviour {
 
     [SerializeField]
     GameObject panel;
+
+
+
+    [SerializeField]
+    GameObject menu;
+
+    public bool langueFR;
+
+    [SerializeField]
+    GameObject indicateur1;
+    
+    [SerializeField]
+    GameObject indicateur2;
+
 
     [SerializeField]
     GameObject backBouton;
@@ -71,8 +87,9 @@ public class Button : MonoBehaviour {
         {
 
         gaucheDroite = 0;
-        
-        
+        langueFR = true;
+        indicateur2.SetActive(false);
+        menu.SetActive(false);
         DragAndDropPanel3.SetActive(false);
         DragAndDropPanel2.SetActive(false);
         DragAndDropPanel1.SetActive(true);
@@ -161,9 +178,35 @@ public class Button : MonoBehaviour {
 
    }
 
+    public void Menu_bouton()
+    {
+        menu.SetActive(true);
+    
+    }
+
+    public void Menu_reprendre()
+    {
+        //Debug.Log("reprendre");
+        menu.SetActive(false);
+
+    }
+
+    public void Menu_EN()
+    {
+        langueFR = false;
+        indicateur1.SetActive(false);
+        indicateur2.SetActive(true);
+    }
 
 
-   void Update()
+    public void Menu_FR()
+    {
+        langueFR = true;
+        indicateur1.SetActive(true);
+        indicateur2.SetActive(false);
+    }
+
+    void Update()
    {
 
        if (Vector3.Distance(HelperPanel.transform.position,panel.transform.position)<2f)
