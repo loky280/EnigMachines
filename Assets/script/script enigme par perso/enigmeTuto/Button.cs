@@ -196,6 +196,7 @@ public class Button : MonoBehaviour {
         langueFR = false;
         indicateur1.SetActive(false);
         indicateur2.SetActive(true);
+        dialogueEtTuto.changementLangue();
     }
 
 
@@ -204,6 +205,7 @@ public class Button : MonoBehaviour {
         langueFR = true;
         indicateur1.SetActive(true);
         indicateur2.SetActive(false);
+        dialogueEtTuto.changementLangue();
     }
 
     void Update()

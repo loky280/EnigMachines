@@ -146,7 +146,7 @@ public class DialogueEtTuto : MonoBehaviour
         //dialogue suivant
         dialogue += 1;
 
-        if (dialogue <15)
+        if (dialogue <15 && button.langueFR == true )
         {
             //_______________________changement de dialogue precedent avec le suivant
             dialoguepackage[dialogueMoinUn].SetActive(false);
@@ -155,8 +155,17 @@ public class DialogueEtTuto : MonoBehaviour
            
         }
 
+        if (dialogue < 15 && button.langueFR == false)
+        {
+            //_______________________changement de dialogue precedent avec le suivant
+            dialoguepackageEN[dialogueMoinUn].SetActive(false);
+            dialoguepackageEN[dialogue].SetActive(true);
+
+
+        }
+
         //___________________________________________condition de disparition des dialogue
-        
+
         if (dialogue == 5 || dialogue == 6 || dialogue == 7 || dialogue == 8 || dialogue == 9 || dialogue == 10 || dialogue == 11 || dialogue == 12 || dialogue == 13 )
         {
             disparitionDialogue();
@@ -189,20 +198,37 @@ public class DialogueEtTuto : MonoBehaviour
         disparue = true;
         buttonPasser.SetActive(false);
         dialogueUI_1.SetActive(false);
-        dialoguepackage[dialogue].SetActive(false);
         
+        
+        if (button.langueFR == true)
+        {
+            dialoguepackage[dialogue].SetActive(false);
+        }
+
+      else
+        {
+            dialoguepackageEN[dialogue].SetActive(false);
+        }
     }
 
 
     public void apparitionDialogue()
     {
-        if (button.langueFR == true ) { 
-            Debug.Log("apparition");
-            disparue = false;
-            buttonPasser.SetActive(true);
-            dialogueUI_1.SetActive(true);
+       
+        Debug.Log("apparition");
+        disparue = false;
+        buttonPasser.SetActive(true);
+        dialogueUI_1.SetActive(true);
+        
+        if (button.langueFR == true)
+        {
             dialoguepackage[dialogue].SetActive(true);
         }
+        else
+        {
+            dialoguepackageEN[dialogue].SetActive(true);
+        }
+
     }
     //public void passageDeDialogue (){
 
@@ -212,8 +238,29 @@ public class DialogueEtTuto : MonoBehaviour
 
 
 
+    public void changementLangue()
+    {
+        if (disparue == false) { 
+            if (button.langueFR == true)
+            {
+                dialoguepackage[dialogue].SetActive(true);
+                dialoguepackageEN[dialogue].SetActive(false);
+            }
+            else
+            {
+           
+                dialoguepackage[dialogue].SetActive(false);
+                dialoguepackageEN[dialogue].SetActive(true);
+          
+            }
+        }
+    }
+
+
     void Update()
     {
+        
+        
         /*
         if (dialogue == 3)
         {
