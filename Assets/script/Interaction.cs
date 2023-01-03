@@ -44,8 +44,8 @@ public class Interaction : MonoBehaviour {
         VectorCam = new Vector3(-183, -17, -58);
         
         Camera camera = Camera.main;
-        camera.transform.Translate(VectorCam);
-        camera.transform.rotation = Quaternion.Euler(13, 41, 0);
+        //camera.transform.Translate(VectorCam);
+        //camera.transform.rotation = Quaternion.Euler(13, 41, 0);
 
         BoutonDemarrer.SetActive(false);
         enigme.SetActive(false);
@@ -111,6 +111,10 @@ public class Interaction : MonoBehaviour {
     }
 
     //_____________________Fonction Interessante
+
+    //__________________position Interieur :  X=0    Y=12.1    Z=-10                rotation :  X=32
+
+    //__________________position Exterieur :  X=-183    Y=28.4185    Z=-68.19542                rotation :  X=32
 
     //Debug.Log(hit.transform.name);_________donne l'information d'un objet hit par leraycast
     //gameObject.SetActive(false/true)______desative
