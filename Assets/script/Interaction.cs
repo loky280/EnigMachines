@@ -10,6 +10,13 @@ public class Interaction : MonoBehaviour {
     public DialogueEtTuto dialogueEtTuto;
 
     // Variables
+
+    [SerializeField]
+    GameObject pingPorte;
+    
+    [SerializeField]
+    GameObject pingPorte2;
+
     [SerializeField]
     GameObject enigme;
 
@@ -40,6 +47,10 @@ public class Interaction : MonoBehaviour {
 
 
     public void Start(){
+
+        pingPorte.SetActive(true);
+        pingPorte2.SetActive(false);
+
 
         VectorCam = new Vector3(-183, -17, -58);
         
@@ -90,13 +101,14 @@ public class Interaction : MonoBehaviour {
 
                 camera.transform.Translate(VectorCam);
                 camera.transform.rotation = Quaternion.Euler(13, 41, 0);
-
+                pingPorte2.SetActive(false);
             }
 
             else if (hit.transform.tag == "Porte")
             {
                 Debug.Log("porteExterieur");
-              
+
+                pingPorte.SetActive(false);
                 camera.transform.rotation = Quaternion.Euler(32, 0, 0);
                 camera.transform.Translate(VectorCam * -1);
 

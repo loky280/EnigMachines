@@ -27,6 +27,10 @@ public class DialogueEtTuto : MonoBehaviour
     
     [SerializeField]
     GameObject buttonPasser;
+    
+    
+    [SerializeField]
+    GameObject pingPorte2;
 
     
     //___________________Anna Qui parle
@@ -103,6 +107,9 @@ public class DialogueEtTuto : MonoBehaviour
         dialoguepackage[14].SetActive(false);
         dialoguepackage[15].SetActive(false);
         dialoguepackage[16].SetActive(false);
+        dialoguepackage[17].SetActive(false);
+        dialoguepackage[18].SetActive(false);
+
 
         //________________________________________EN
         dialoguepackageEN[0].SetActive(false);
@@ -124,6 +131,8 @@ public class DialogueEtTuto : MonoBehaviour
         dialoguepackageEN[14].SetActive(false);
         dialoguepackageEN[15].SetActive(false);
         dialoguepackageEN[16].SetActive(false);
+        dialoguepackageEN[17].SetActive(false);
+        dialoguepackageEN[18].SetActive(false);
         //dialoguepackage1.SetActive(true);
 
         //buttonPasserAutorisation = true;
@@ -150,7 +159,7 @@ public class DialogueEtTuto : MonoBehaviour
         //changement d'UIdialogue
         dialogueUI();
 
-        if (dialogue <16 && button.langueFR == true )
+        if (dialogue <18 && button.langueFR == true )
         {
             //_______________________changement de dialogue precedent avec le suivant
             dialoguepackage[dialogueMoinUn].SetActive(false);
@@ -159,7 +168,7 @@ public class DialogueEtTuto : MonoBehaviour
            
         }
 
-        if (dialogue < 16 && button.langueFR == false)
+        if (dialogue < 18 && button.langueFR == false)
         {
             //_______________________changement de dialogue precedent avec le suivant
             dialoguepackageEN[dialogueMoinUn].SetActive(false);
@@ -175,9 +184,10 @@ public class DialogueEtTuto : MonoBehaviour
             disparitionDialogue();
         }
 
-        if (dialogue == 15)
+        if (dialogue == 18)
         {
             disparitionDialogue();
+            pingPorte2.SetActive(true);
         }
 
        
