@@ -37,7 +37,7 @@ public class essence : MonoBehaviour
         {
             wasPlaying = true;
 
-            Debug.Log("test");
+            //Debug.Log("test");
             //   particuleEssence.SetActive(true);
             particuleEssence.Play();
 

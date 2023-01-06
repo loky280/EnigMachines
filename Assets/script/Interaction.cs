@@ -11,6 +11,11 @@ public class Interaction : MonoBehaviour {
 
     // Variables
 
+
+
+    [SerializeField]
+    GameObject elipse;
+        
     [SerializeField]
     GameObject pingPorte;
     
@@ -50,7 +55,7 @@ public class Interaction : MonoBehaviour {
 
         pingPorte.SetActive(true);
         pingPorte2.SetActive(false);
-
+        elipse.SetActive(false);
 
         VectorCam = new Vector3(-183, -17, -58);
         
@@ -67,6 +72,10 @@ public class Interaction : MonoBehaviour {
 
     }
 
+    public void elipseStop()
+    {
+        elipse.SetActive(false);
+    }
 
     public void Update(){
         RaycastHit hit;
@@ -102,6 +111,13 @@ public class Interaction : MonoBehaviour {
                 camera.transform.Translate(VectorCam);
                 camera.transform.rotation = Quaternion.Euler(13, 41, 0);
                 pingPorte2.SetActive(false);
+
+                if (dialogueEtTuto.dialogue == 19) { 
+                    dialogueEtTuto.dialogue +=1;
+                    dialogueEtTuto.dialogueMoinUn += 1;
+                    elipse.SetActive(true);
+                }
+
             }
 
             else if (hit.transform.tag == "Porte")

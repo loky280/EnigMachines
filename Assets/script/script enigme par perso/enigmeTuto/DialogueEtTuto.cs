@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class DialogueEtTuto : MonoBehaviour
 {
-
+    public Interaction interaction;
     public Button button;
 
     public bool FinDialogue;
@@ -13,7 +13,8 @@ public class DialogueEtTuto : MonoBehaviour
     //___________________UI-Dialogue ==> present ?
     [SerializeField]
     public bool disparue;
-    
+
+    public bool desactiveElipse;
 
     public bool debutDialogue;
     //public bool ActiveDialogue1;
@@ -32,7 +33,9 @@ public class DialogueEtTuto : MonoBehaviour
     [SerializeField]
     GameObject pingPorte2;
 
-    
+    [SerializeField]
+    GameObject elipse;
+
     //___________________Anna Qui parle
     [SerializeField]
     GameObject dialogueUI_1;
@@ -75,6 +78,7 @@ public class DialogueEtTuto : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        desactiveElipse = false;
         //nomDeLaListe.Add(element1);
         //dialoguepackage.Add();
         //dialoguepackage.add
@@ -86,7 +90,8 @@ public class DialogueEtTuto : MonoBehaviour
         //dialogueUI_1.SetActive(false);
         //dialoguepackage[0].SetActive(false);
         dialogueUI_2.SetActive(false);
-//_____________________________________________FR
+        elipse.SetActive(false);
+        //_____________________________________________FR
         disparitionDialogue();
         dialoguepackage[0].SetActive(false);
         dialoguepackage[1].SetActive(false);
@@ -109,6 +114,17 @@ public class DialogueEtTuto : MonoBehaviour
         dialoguepackage[16].SetActive(false);
         dialoguepackage[17].SetActive(false);
         dialoguepackage[18].SetActive(false);
+        dialoguepackage[19].SetActive(false);
+        dialoguepackage[20].SetActive(false);
+        dialoguepackage[21].SetActive(false);
+        dialoguepackage[22].SetActive(false);
+        dialoguepackage[23].SetActive(false);
+        dialoguepackage[24].SetActive(false);
+        dialoguepackage[25].SetActive(false);
+        dialoguepackage[26].SetActive(false);
+        dialoguepackage[27].SetActive(false);
+        dialoguepackage[28].SetActive(false);
+        dialoguepackage[29].SetActive(false);
 
 
         //________________________________________EN
@@ -133,6 +149,20 @@ public class DialogueEtTuto : MonoBehaviour
         dialoguepackageEN[16].SetActive(false);
         dialoguepackageEN[17].SetActive(false);
         dialoguepackageEN[18].SetActive(false);
+        dialoguepackageEN[19].SetActive(false);
+        dialoguepackageEN[20].SetActive(false);
+        dialoguepackageEN[21].SetActive(false);
+        dialoguepackageEN[22].SetActive(false);
+        dialoguepackageEN[23].SetActive(false);
+        dialoguepackageEN[24].SetActive(false);
+        dialoguepackageEN[25].SetActive(false);
+        dialoguepackageEN[26].SetActive(false);
+        dialoguepackageEN[27].SetActive(false);
+        dialoguepackageEN[28].SetActive(false);
+        dialoguepackageEN[29].SetActive(false);
+
+
+
         //dialoguepackage1.SetActive(true);
 
         //buttonPasserAutorisation = true;
@@ -158,8 +188,13 @@ public class DialogueEtTuto : MonoBehaviour
 
         //changement d'UIdialogue
         dialogueUI();
+        
+        if (desactiveElipse == true)
+        {
+            interaction.elipseStop();
+        }
 
-        if (dialogue <18 && button.langueFR == true )
+        if (dialogue <29 && button.langueFR == true )
         {
             //_______________________changement de dialogue precedent avec le suivant
             dialoguepackage[dialogueMoinUn].SetActive(false);
@@ -168,7 +203,7 @@ public class DialogueEtTuto : MonoBehaviour
            
         }
 
-        if (dialogue < 18 && button.langueFR == false)
+        if (dialogue < 29 && button.langueFR == false)
         {
             //_______________________changement de dialogue precedent avec le suivant
             dialoguepackageEN[dialogueMoinUn].SetActive(false);
@@ -179,12 +214,14 @@ public class DialogueEtTuto : MonoBehaviour
 
         //___________________________________________condition de disparition des dialogue
 
-        if (dialogue == 5 || dialogue == 6 || dialogue == 7 || dialogue == 8 || dialogue == 9 || dialogue == 10 || dialogue == 11 || dialogue == 12 || dialogue == 13 )
+        if (dialogue == 5 || dialogue == 6 || dialogue == 7 || dialogue == 8 || dialogue == 9 || dialogue == 10 || dialogue == 11 || dialogue == 12 || dialogue == 13 || dialogue == 19)
         {
             disparitionDialogue();
         }
+       
+       
 
-        if (dialogue == 18)
+        if (dialogue == 19)
         {
             disparitionDialogue();
             pingPorte2.SetActive(true);
@@ -203,9 +240,43 @@ public class DialogueEtTuto : MonoBehaviour
 
     }
 
+    public void elipseTiming()
+    {
+
+        if (dialogue == 20)
+        {
+            Debug.Log("test");
+            dialogueUI_2.SetActive(false);
+            dialogueUI_1.SetActive(false);
+            elipse.SetActive(true);
+        }
+        //else elipse.SetActive(false);
+        /*if (dialogue == 19)
+       {
+           elipse.SetActive(true);
+           dialogueUI_2.SetActive(false);
+           dialogueUI_1.SetActive(false);
+           if (button.langueFR == true )
+           {
+               dialoguepackage[19].SetActive(true);
+           }
+
+           else { dialoguepackageEN[19].SetActive(true); }
+       }
+
+       else
+       { 
+           elipse.SetActive(false);
+           dialoguepackage[19].SetActive(false);
+           dialoguepackageEN[19].SetActive(false);
+
+       }
+       */
+    }
+
     public void dialogueUI()
     {
-        if (dialogue == 1 || dialogue == 14) { dialogueUI_2.SetActive(true); }
+        if (dialogue == 1 || dialogue == 14 || dialogue == 15 || dialogue == 18) { dialogueUI_2.SetActive(true); }
 
         else  { dialogueUI_2.SetActive(false); }
     }

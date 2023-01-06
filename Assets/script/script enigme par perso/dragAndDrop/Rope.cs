@@ -8,19 +8,60 @@ public class Rope : MonoBehaviour
         public Transform cable;
 
         public LineRenderer rope;
+
+    public Transform startPos;
         public LayerMask collMask;
 
         public List<Vector3> ropePositions { get; set; } = new List<Vector3>();
 
-        private void Awake() => AddPosToRope(Vector3.zero);
+        bool isActive = false;
+
+
+
+    float minCollisionDistance = 2f;
+
+
+
+
+    private void Update()
+    {
+        rope.SetPosition(0, startPos.position);
+        rope.SetPosition(1, cable.position);
+    }
+
+    /*
+        private void Init()
+        {
+
+           AddPosToRope(startPos.position);
+
+        isActive = true;
+
+        }
 
         private void Update()
         {
+
+            //ropePositions[0] = startPos.position;
+
+
+
+            if(Input.GetKeyDown(KeyCode.K))
+            {
+                Init();
+            }
+
+
+        if (isActive == false)
+            return;
+
+
             UpdateRopePositions();
             LastSegmentGoToPlayerPos();
 
             DetectCollisionEnter();
             if (ropePositions.Count > 2) DetectCollisionExits();
+
         }
 
         private void DetectCollisionEnter()
@@ -28,8 +69,18 @@ public class Rope : MonoBehaviour
             RaycastHit hit;
             if (Physics.Linecast(cable.position, rope.GetPosition(ropePositions.Count - 2), out hit, collMask))
             {
-                ropePositions.RemoveAt(ropePositions.Count - 1);
-                AddPosToRope(hit.point);
+
+            // Check for duplicated collision (two collisions at the same place).
+
+                if (System.Math.Abs(Vector3.Distance(rope.GetPosition(ropePositions.Count - 2), hit.point)) > minCollisionDistance)
+                {
+
+                    ropePositions.RemoveAt(ropePositions.Count - 1);
+
+                    AddPosToRope(hit.point);
+
+                }
+
             }
         }
 
@@ -54,5 +105,5 @@ public class Rope : MonoBehaviour
             rope.SetPositions(ropePositions.ToArray());
         }
 
-        private void LastSegmentGoToPlayerPos() => rope.SetPosition(rope.positionCount - 1, cable.position);
-    }
+        private void LastSegmentGoToPlayerPos() => rope.SetPosition(rope.positionCount - 1, cable.position);*/
+}
