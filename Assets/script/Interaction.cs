@@ -32,7 +32,10 @@ public class Interaction : MonoBehaviour {
     GameObject pingPorte2;
 
     [SerializeField]
-    GameObject enigme;
+    GameObject enigmeTuto;
+
+    [SerializeField]
+    GameObject enigmeMino;
 
     [SerializeField]
     GameObject okBoutton;
@@ -74,7 +77,8 @@ public class Interaction : MonoBehaviour {
         //camera.transform.rotation = Quaternion.Euler(13, 41, 0);
 
         BoutonDemarrer.SetActive(false);
-        enigme.SetActive(false);
+        enigmeTuto.SetActive(false);
+        enigmeMino.SetActive(false);
         backButton.SetActive(false);
         leftButton.SetActive(false);
         rightButton.SetActive(false);
@@ -105,13 +109,32 @@ public class Interaction : MonoBehaviour {
                 }
 
                 BoutonDemarrer.SetActive(true);
-                enigme.SetActive(true);
+                enigmeTuto.SetActive(true);
                 backButton.SetActive(true);
                 leftButton.SetActive(true);
                 rightButton.SetActive(true);
                 //porteButton.SetActive(false); 
 
                 Debug.Log("machiniste1");
+            }
+
+
+            else if (hit.transform.tag == "machiniste3")
+            {
+                /*
+                if (dialogueEtTuto.disparue == true && dialogueEtTuto.dialogue == 5)
+                {
+                    dialogueEtTuto.apparitionDialogue();
+                }*/
+
+                BoutonDemarrer.SetActive(true);
+                enigmeMino.SetActive(true);
+                backButton.SetActive(true);
+                leftButton.SetActive(true);
+                rightButton.SetActive(true);
+                //porteButton.SetActive(false); 
+
+                Debug.Log("machiniste3");
             }
 
             else if (hit.transform.tag == "porteInterieur")
