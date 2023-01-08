@@ -25,6 +25,9 @@ public class Button : MonoBehaviour {
     GameObject DragAndDropPanel1;
 
     [SerializeField]
+    GameObject elipse;
+
+    [SerializeField]
     GameObject DragAndDropPanel2;
 
     [SerializeField]
@@ -208,7 +211,12 @@ public class Button : MonoBehaviour {
         dialogueEtTuto.changementLangue();
     }
 
-    void Update()
+    public void elipseStop()
+    {
+        elipse.SetActive(false);
+    }
+
+        void Update()
    {
 
        if (Vector3.Distance(HelperPanel.transform.position,panel.transform.position)<2f)

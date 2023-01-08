@@ -60,6 +60,16 @@ public class DialogueEtTuto : MonoBehaviour
     //[SerializeField]
     //GameObject[] dialoguepackage;
 
+
+    //__________________trad
+    [SerializeField]
+    GameObject textTuto2FR;
+
+    [SerializeField]
+    GameObject textTuto2EN;
+
+
+
     //__________________liste texte Francais
     [SerializeField]
     List<GameObject> dialoguepackage = new List<GameObject>();
@@ -78,6 +88,10 @@ public class DialogueEtTuto : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        //textTuto2FR.SetActive(false);
+        //textTuto2EN.SetActive(false);
+
         desactiveElipse = false;
         //nomDeLaListe.Add(element1);
         //dialoguepackage.Add();
@@ -225,6 +239,13 @@ public class DialogueEtTuto : MonoBehaviour
         {
             disparitionDialogue();
             pingPorte2.SetActive(true);
+            
+            if (button.langueFR == false)
+            {
+                textTuto2FR.SetActive(false);
+                textTuto2EN.SetActive(true);
+
+            }
         }
 
        

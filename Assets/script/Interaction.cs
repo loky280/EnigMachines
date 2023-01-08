@@ -9,14 +9,23 @@ public class Interaction : MonoBehaviour {
 
     public DialogueEtTuto dialogueEtTuto;
 
+    public Button button;
     // Variables
 
 
+    [SerializeField]
+    GameObject elispeEn;
+
+    [SerializeField]
+    GameObject elipseFR;
 
     [SerializeField]
     GameObject elipse;
-        
-    [SerializeField]
+
+    //[SerializeField]
+    //GameObject buttonPasser;
+
+   [SerializeField]
     GameObject pingPorte;
     
     [SerializeField]
@@ -113,9 +122,18 @@ public class Interaction : MonoBehaviour {
                 pingPorte2.SetActive(false);
 
                 if (dialogueEtTuto.dialogue == 19) { 
-                    dialogueEtTuto.dialogue +=1;
-                    dialogueEtTuto.dialogueMoinUn += 1;
+                    //dialogueEtTuto.dialogue +=1;
+                    //dialogueEtTuto.dialogueMoinUn += 1;
+                    
                     elipse.SetActive(true);
+
+                    if (button.langueFR == false) {
+                    elispeEn.SetActive(true);
+                    elipseFR.SetActive(false);
+
+                    }
+                    //buttonPasser.SetActive(true);
+                    else;
                 }
 
             }
