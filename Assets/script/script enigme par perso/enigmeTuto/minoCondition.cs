@@ -145,7 +145,7 @@ public class minoCondition : MonoBehaviour
                 Greenlight3.SetActive(true);
                 GreenlightBouton1.SetActive(true);
                 redlightBouton1.SetActive(false);
-                if (dialogueEtTuto.disparue == true && dialogueEtTuto.dialogue == 12) { dialogueEtTuto.apparitionDialogue(); }
+                if (dialogueEtTuto.disparue == true && dialogueEtTuto.dialogue == 28) { dialogueEtTuto.apparitionDialogue(); }
             }
 
         }

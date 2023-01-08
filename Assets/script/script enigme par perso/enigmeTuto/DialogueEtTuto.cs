@@ -43,6 +43,12 @@ public class DialogueEtTuto : MonoBehaviour
     //___________________Samuel Qui parle
     [SerializeField]
     GameObject dialogueUI_2;
+
+    [SerializeField]
+    GameObject dialogueUI_3;
+
+    [SerializeField]
+    GameObject dialogueUI_4;
     /*
     [SerializeField]
     GameObject dialoguepackage0;
@@ -104,6 +110,8 @@ public class DialogueEtTuto : MonoBehaviour
         //dialogueUI_1.SetActive(false);
         //dialoguepackage[0].SetActive(false);
         dialogueUI_2.SetActive(false);
+        dialogueUI_3.SetActive(false);
+        dialogueUI_4.SetActive(false);
         elipse.SetActive(false);
         
         textTuto2EN.SetActive(false);
@@ -142,6 +150,10 @@ public class DialogueEtTuto : MonoBehaviour
         dialoguepackage[27].SetActive(false);
         dialoguepackage[28].SetActive(false);
         dialoguepackage[29].SetActive(false);
+        dialoguepackage[30].SetActive(false);
+        dialoguepackage[31].SetActive(false);
+        dialoguepackage[32].SetActive(false);
+        //dialoguepackage[33].SetActive(false);
 
 
         //________________________________________EN
@@ -177,6 +189,10 @@ public class DialogueEtTuto : MonoBehaviour
         dialoguepackageEN[27].SetActive(false);
         dialoguepackageEN[28].SetActive(false);
         dialoguepackageEN[29].SetActive(false);
+        dialoguepackageEN[30].SetActive(false);
+        dialoguepackageEN[31].SetActive(false);
+        dialoguepackageEN[32].SetActive(false);
+        //dialoguepackageEN[33].SetActive(false);
 
 
 
@@ -205,13 +221,16 @@ public class DialogueEtTuto : MonoBehaviour
 
         //changement d'UIdialogue
         dialogueUI();
-        
+        //dialogueUI2();
+        dialogueUI3();
+
+
         if (desactiveElipse == true)
         {
             interaction.elipseStop();
         }
 
-        if (dialogue <29 && button.langueFR == true )
+        if (dialogue <32 && button.langueFR == true )
         {
             //_______________________changement de dialogue precedent avec le suivant
             dialoguepackage[dialogueMoinUn].SetActive(false);
@@ -220,7 +239,7 @@ public class DialogueEtTuto : MonoBehaviour
            
         }
 
-        if (dialogue < 29 && button.langueFR == false)
+        if (dialogue < 32 && button.langueFR == false)
         {
             //_______________________changement de dialogue precedent avec le suivant
             dialoguepackageEN[dialogueMoinUn].SetActive(false);
@@ -232,7 +251,7 @@ public class DialogueEtTuto : MonoBehaviour
         //___________________________________________condition de disparition des dialogue
 
         if (dialogue == 5 || dialogue == 6 || dialogue == 7 || dialogue == 8 || dialogue == 9 || dialogue == 10 || dialogue == 11 || dialogue == 12 || 
-            dialogue == 13 || dialogue == 19 || dialogue == 24)
+            dialogue == 13 || dialogue == 19 || dialogue == 23 || dialogue == 28 || dialogue == 31)
         {
             disparitionDialogue();
         }
@@ -301,9 +320,23 @@ public class DialogueEtTuto : MonoBehaviour
 
     public void dialogueUI()
     {
-        if (dialogue == 1 || dialogue == 14 || dialogue == 15 || dialogue == 18) { dialogueUI_2.SetActive(true); }
+        if (dialogue == 1 || dialogue == 14 || dialogue == 15 || dialogue == 18 || dialogue == 20 || dialogue == 22) { dialogueUI_2.SetActive(true); }
 
         else  { dialogueUI_2.SetActive(false); }
+    }
+    /*
+    public void dialogueUI2()
+    {
+        if (dialogue == 23 || dialogue == 24 ) { dialogueUI_3.SetActive(true); }
+
+        else { dialogueUI_3.SetActive(false); }
+    }*/
+
+    public void dialogueUI3()
+    {
+        if (dialogue == 24 || dialogue == 27 || dialogue == 29) { dialogueUI_4.SetActive(true); }
+
+        else { dialogueUI_4.SetActive(false); }
     }
 
     public void disparitionDialogue()
@@ -312,6 +345,8 @@ public class DialogueEtTuto : MonoBehaviour
         Debug.Log("disparition");
         disparue = true;
         buttonPasser.SetActive(false);
+        
+
         dialogueUI_1.SetActive(false);
         
         
@@ -333,7 +368,11 @@ public class DialogueEtTuto : MonoBehaviour
         Debug.Log("apparition");
         disparue = false;
         buttonPasser.SetActive(true);
-        dialogueUI_1.SetActive(true);
+
+        if (dialogue == 23 || dialogue == 25 || dialogue == 26 || dialogue ==28  || dialogue == 30  ) { dialogueUI_3.SetActive(true); }
+
+        else { dialogueUI_3.SetActive(false); dialogueUI_1.SetActive(true); }
+        //dialogueUI_1.SetActive(true);
         
         if (button.langueFR == true)
         {

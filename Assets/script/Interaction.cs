@@ -14,6 +14,9 @@ public class Interaction : MonoBehaviour {
 
 
     [SerializeField]
+    GameObject interactionMino;
+
+    [SerializeField]
     GameObject constructionMino;
 
     [SerializeField]
@@ -140,14 +143,22 @@ public class Interaction : MonoBehaviour {
                 camera.transform.Translate(VectorMino);
 
                 constructionMino.SetActive(true);
-                //BoutonDemarrer.SetActive(true);
-                //enigmeMino.SetActive(true);
-                //backButton.SetActive(true);
-                //leftButton.SetActive(true);
-                //rightButton.SetActive(true);
-                //porteButton.SetActive(false); 
 
-                Debug.Log("machiniste3");
+                if ((dialogueEtTuto.disparue == true && dialogueEtTuto.dialogue==19) || (dialogueEtTuto.disparue == true && dialogueEtTuto.dialogue == 23) )
+                {
+                    dialogueEtTuto.apparitionDialogue();
+                    dialogueEtTuto.dialogue = 23;
+                }
+
+                    //BoutonDemarrer.SetActive(true);
+                    //enigmeMino.SetActive(true);
+                    //backButton.SetActive(true);
+                    //leftButton.SetActive(true);
+                    //rightButton.SetActive(true);
+                    //porteButton.SetActive(false); 
+                    interactionMino.SetActive(false); 
+
+                    Debug.Log("machiniste3");
             }
 
             else if (hit.transform.tag == "porteInterieur")
