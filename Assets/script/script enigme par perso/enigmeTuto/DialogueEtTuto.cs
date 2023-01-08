@@ -231,7 +231,8 @@ public class DialogueEtTuto : MonoBehaviour
 
         //___________________________________________condition de disparition des dialogue
 
-        if (dialogue == 5 || dialogue == 6 || dialogue == 7 || dialogue == 8 || dialogue == 9 || dialogue == 10 || dialogue == 11 || dialogue == 12 || dialogue == 13 || dialogue == 19)
+        if (dialogue == 5 || dialogue == 6 || dialogue == 7 || dialogue == 8 || dialogue == 9 || dialogue == 10 || dialogue == 11 || dialogue == 12 || 
+            dialogue == 13 || dialogue == 19 || dialogue == 24)
         {
             disparitionDialogue();
         }

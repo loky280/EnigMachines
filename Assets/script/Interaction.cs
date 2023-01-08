@@ -186,6 +186,11 @@ public class Interaction : MonoBehaviour {
                 if (dialogueEtTuto.disparue == true && dialogueEtTuto.dialogue == 0) { 
                     dialogueEtTuto.apparitionDialogue();
                 }
+
+                if (dialogueEtTuto.disparue == true && dialogueEtTuto.dialogue == 19)
+                {
+                    dialogueEtTuto.apparitionDialogue();
+                }
             }
 
         }

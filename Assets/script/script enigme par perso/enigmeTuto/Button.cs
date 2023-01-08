@@ -50,8 +50,8 @@ public class Button : MonoBehaviour {
     [SerializeField]
     GameObject DragAndDropPanelMino2;
 
-    //[SerializeField]
-    //GameObject DragAndDropPanelMino3;
+    [SerializeField]
+    GameObject DragAndDropPanelMino3;
 
     [SerializeField]
     GameObject HelperPanelMino;
@@ -118,7 +118,7 @@ public class Button : MonoBehaviour {
         DragAndDropPanel1.SetActive(true);
 
 
-        //DragAndDropPanelMino3.SetActive(false);
+        DragAndDropPanelMino3.SetActive(false);
         DragAndDropPanelMino2.SetActive(false);
         DragAndDropPanelMino1.SetActive(true);
 
@@ -306,7 +306,7 @@ public class Button : MonoBehaviour {
 
             if (gaucheDroite == 0)
             {
-                //DragAndDropPanelMino3.SetActive(false);
+                DragAndDropPanelMino3.SetActive(false);
                 DragAndDropPanelMino2.SetActive(false);
                 DragAndDropPanelMino1.SetActive(true);
             }
@@ -315,7 +315,7 @@ public class Button : MonoBehaviour {
             else if (gaucheDroite == 2)
             {
                 //if (dialogueEtTuto.disparue == true && dialogueEtTuto.dialogue == 11) { dialogueEtTuto.apparitionDialogue(); }
-                //DragAndDropPanelMino3.SetActive(true);
+                DragAndDropPanelMino3.SetActive(true);
                 DragAndDropPanelMino2.SetActive(false);
                 DragAndDropPanelMino1.SetActive(false);
             }
@@ -324,7 +324,7 @@ public class Button : MonoBehaviour {
             else if (gaucheDroite == 1)
             {
                 //if (dialogueEtTuto.disparue == true && dialogueEtTuto.dialogue == 8 && enigmeCondition.winPanel1 == true) { dialogueEtTuto.apparitionDialogue(); }
-                //DragAndDropPanelMino3.SetActive(false);
+                DragAndDropPanelMino3.SetActive(false);
                 DragAndDropPanelMino2.SetActive(true);
                 DragAndDropPanelMino1.SetActive(false);
             }

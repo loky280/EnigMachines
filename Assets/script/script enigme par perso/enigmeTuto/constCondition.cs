@@ -25,6 +25,9 @@ public class constCondition : MonoBehaviour
     //__________________________________________
 
     [SerializeField]
+    GameObject minotaure;
+
+    [SerializeField]
     GameObject tete;
 
     [SerializeField]
@@ -54,6 +57,7 @@ public class constCondition : MonoBehaviour
     void Start()
     {
         winConst = false;
+        minotaure.SetActive(false);
     }
 
     // Update is called once per frame
@@ -63,16 +67,20 @@ public class constCondition : MonoBehaviour
         (Vector3.Distance(patteAvant.transform.position, PTSEncrageMino3.transform.position) < 2f) && (Vector3.Distance(patteArriere.transform.position, PTSEncrageMino4.transform.position) < 2f))
         {
             winConst = true;
+            /*
             BoutonDemarrer.SetActive(true);
             enigmeMino.SetActive(true);
             leftButton.SetActive(true);
             rightButton.SetActive(true);
-
+            */
+            
             tete.SetActive(false);
             torse.SetActive(false);
             patteArriere.SetActive(false);
             patteAvant.SetActive(false);
             dragandDropPlane.SetActive(false);
+
+            minotaure.SetActive(true);
             /*
                         if (dialogueEtTuto.disparue == true && dialogueEtTuto.dialogue == 7)
                         {
