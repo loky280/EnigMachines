@@ -14,6 +14,9 @@ public class Interaction : MonoBehaviour {
 
 
     [SerializeField]
+    GameObject constructionMino;
+
+    [SerializeField]
     GameObject elispeEn;
 
     [SerializeField]
@@ -57,6 +60,8 @@ public class Interaction : MonoBehaviour {
 
     Vector3 VectorCam;
 
+    Vector3 VectorMino;
+ 
     public float xTransform;
     public float yTransform;
     public float zTransform;
@@ -65,12 +70,16 @@ public class Interaction : MonoBehaviour {
 
     public void Start(){
 
+        constructionMino.SetActive(false);
+
         pingPorte.SetActive(true);
         pingPorte2.SetActive(false);
         elipse.SetActive(false);
         elispeEn.SetActive(false);
 
         VectorCam = new Vector3(-183, -17, -58);
+        
+        VectorMino = new Vector3(-75, -17, 0);
         
         Camera camera = Camera.main;
         //camera.transform.Translate(VectorCam);
@@ -127,11 +136,15 @@ public class Interaction : MonoBehaviour {
                     dialogueEtTuto.apparitionDialogue();
                 }*/
 
-                BoutonDemarrer.SetActive(true);
-                enigmeMino.SetActive(true);
-                backButton.SetActive(true);
-                leftButton.SetActive(true);
-                rightButton.SetActive(true);
+                camera.transform.rotation = Quaternion.Euler(13, 90, 0);
+                camera.transform.Translate(VectorMino);
+
+                constructionMino.SetActive(true);
+                //BoutonDemarrer.SetActive(true);
+                //enigmeMino.SetActive(true);
+                //backButton.SetActive(true);
+                //leftButton.SetActive(true);
+                //rightButton.SetActive(true);
                 //porteButton.SetActive(false); 
 
                 Debug.Log("machiniste3");
@@ -184,7 +197,8 @@ public class Interaction : MonoBehaviour {
 
     //__________________position Interieur :  X=0    Y=12.1    Z=-10                rotation :  X=32
 
-    //__________________position Exterieur :  X=-183    Y=28.4185    Z=-68.19542                rotation :  X=32
+    //__________________position Exterieur :  X=-183    Y=28.4185    Z=-68.19542                rotation :  X=13    y=41
+    //__________________positionMino : x= -192.9       y=11         z=8     rotation: x = 13 y= 90
 
     //Debug.Log(hit.transform.name);_________donne l'information d'un objet hit par leraycast
     //gameObject.SetActive(false/true)______desative
