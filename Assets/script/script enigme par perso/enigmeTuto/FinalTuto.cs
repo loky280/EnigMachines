@@ -7,6 +7,12 @@ public class FinalTuto : MonoBehaviour
     public DialogueEtTuto dialogueEtTuto;
 
     [SerializeField]
+    GameObject pingEnigmeTuto;
+
+    [SerializeField]
+    GameObject pingEnigmeMino;
+
+    [SerializeField]
     GameObject Recompence;
 
     [SerializeField]
@@ -17,24 +23,29 @@ public class FinalTuto : MonoBehaviour
     public void Start()
     {
         Recompence.SetActive(false);
-       // if (dialogueEtTuto.disparue == true) { dialogueEtTuto.apparitionDialogue(); }
-
+        // if (dialogueEtTuto.disparue == true) { dialogueEtTuto.apparitionDialogue(); }
+        pingEnigmeMino.SetActive(false);
     }
 
 
     public void Final()
     {
-        if (dialogueEtTuto.disparue == true && dialogueEtTuto.dialogue == 10) { dialogueEtTuto.apparitionDialogue(); }
+
+        
         //Debug.Log("test");
 
         if (enigmeCondition.winPanel1 == true && enigmeCondition.winPanel2 == true && enigmeCondition.winPanel3 == true)
         {
-            
+            pingEnigmeTuto.SetActive(false);
+            pingEnigmeMino.SetActive(true);
             dialogueEtTuto.dialogue = 13;
             dialogueEtTuto.apparitionDialogue();
             Recompence.SetActive(true);
             okBoutton.SetActive(true);
         }
+
+        else if (dialogueEtTuto.disparue == true && dialogueEtTuto.dialogue == 10) { dialogueEtTuto.apparitionDialogue(); }
+
     }
 
     public void OkButton()
