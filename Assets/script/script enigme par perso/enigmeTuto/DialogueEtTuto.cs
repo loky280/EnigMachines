@@ -105,6 +105,9 @@ public class DialogueEtTuto : MonoBehaviour
         //dialoguepackage[0].SetActive(false);
         dialogueUI_2.SetActive(false);
         elipse.SetActive(false);
+        
+        textTuto2EN.SetActive(false);
+
         //_____________________________________________FR
         disparitionDialogue();
         dialoguepackage[0].SetActive(false);

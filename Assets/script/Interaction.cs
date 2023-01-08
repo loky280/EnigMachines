@@ -65,6 +65,7 @@ public class Interaction : MonoBehaviour {
         pingPorte.SetActive(true);
         pingPorte2.SetActive(false);
         elipse.SetActive(false);
+        elispeEn.SetActive(false);
 
         VectorCam = new Vector3(-183, -17, -58);
         
