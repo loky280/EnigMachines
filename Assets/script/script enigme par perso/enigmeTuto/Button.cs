@@ -10,6 +10,8 @@ using UnityEngine.UI;
 
 public class Button : MonoBehaviour {
 
+    public constCondition const_Condition;
+
     // public Transform panels;
 
 
@@ -20,12 +22,13 @@ public class Button : MonoBehaviour {
     [SerializeField]
     GameObject BoutonDemarrer;
 
+    [SerializeField]
+    GameObject elipse;
+
+    //______________________________________________________
 
     [SerializeField]
     GameObject DragAndDropPanel1;
-
-    [SerializeField]
-    GameObject elipse;
 
     [SerializeField]
     GameObject DragAndDropPanel2;
@@ -36,14 +39,30 @@ public class Button : MonoBehaviour {
     [SerializeField]
     GameObject HelperPanel;
 
-    
-    [SerializeField]
-    GameObject Enigme;
-
     [SerializeField]
     GameObject panel;
 
+    //_____________________________________________________
 
+    [SerializeField]
+    GameObject DragAndDropPanelMino1;
+
+    [SerializeField]
+    GameObject DragAndDropPanelMino2;
+
+    //[SerializeField]
+    //GameObject DragAndDropPanelMino3;
+
+    [SerializeField]
+    GameObject HelperPanelMino;
+
+    [SerializeField]
+    GameObject panelMino;
+
+    //________________________________________________________
+    [SerializeField]
+    GameObject Enigme;
+  
 
     [SerializeField]
     GameObject menu;
@@ -93,10 +112,16 @@ public class Button : MonoBehaviour {
         langueFR = true;
         indicateur2.SetActive(false);
         menu.SetActive(false);
+        
         DragAndDropPanel3.SetActive(false);
         DragAndDropPanel2.SetActive(false);
         DragAndDropPanel1.SetActive(true);
-         
+
+
+        //DragAndDropPanelMino3.SetActive(false);
+        DragAndDropPanelMino2.SetActive(false);
+        DragAndDropPanelMino1.SetActive(true);
+
         //VectorPanel = new Vector3(27, 0, 0);
         //Button btn = boutonback.GetComponent<Button>();____________creer un input de bouton
         //btn.onClick.AddListener(backButton);
@@ -111,7 +136,7 @@ public class Button : MonoBehaviour {
         //dialogueEtTuto.disparitionDialogue();
 
         BoutonDemarrer.SetActive(false);
-        Enigme.SetActive(false);
+        HelperPanel.SetActive(false);
         //panel.SetActive(false);
         backBouton.SetActive(false);
         rightBouton.SetActive(false);
@@ -133,10 +158,19 @@ public class Button : MonoBehaviour {
         if (gaucheDroite != 1){
             
             gaucheDroite = 1;
-            panel.transform.Translate(27, 0, 0);
-            
-            
-            
+
+            if (const_Condition.winConst == false) { 
+               
+                panel.transform.Translate(27, 0, 0);
+            }
+
+            else
+            {
+                panelMino.transform.Translate(27, 0, 0);
+                //Debug.Log("ok");
+            }
+
+
             //dialogueEtTuto.ActiveDialogue2 = true;
             //dialogueEtTuto.buttonPasserAutorisation = true;
 
@@ -155,31 +189,36 @@ public class Button : MonoBehaviour {
 
 
     }
-   /*
-   panel.position = Vector3.Lerp(panel.position, panel.position.x=+27, Time.deltaTime* snapSpeed);
+    /*
+    panel.position = Vector3.Lerp(panel.position, panel.position.x=+27, Time.deltaTime* snapSpeed);
 
-       }
-       else
-{
-   //snap avec une certaine vitesse en dehors du point d'ancrage
-   anchor.position = Vector3.Lerp(anchor.position, lastHitPos, Time.deltaTime * followSpeed);
-   */
-            public void leftButton()
-        {
+        }
+        else
+ {
+    //snap avec une certaine vitesse en dehors du point d'ancrage
+    anchor.position = Vector3.Lerp(anchor.position, lastHitPos, Time.deltaTime * followSpeed);
+    */
+    public void leftButton()
+    {
 
         //Debug.Log("left");
         if (gaucheDroite != 2)
         {
             gaucheDroite = 2;
-            //dialogueEtTuto.ActiveDialogue3 = true;
-            //dialogueEtTuto.buttonPasserAutorisation = true;
-           
-            
-            panel.transform.Translate(-27, 0, 0);
-            
-        }
+            if (const_Condition.winConst == false)
+            {
 
-   }
+                panel.transform.Translate(-27, 0, 0);
+            }
+
+            else
+            {
+                panelMino.transform.Translate(-27, 0, 0);
+                //Debug.Log("ok");
+            }
+
+        }
+    }
 
     public void Menu_bouton()
     {
@@ -219,35 +258,77 @@ public class Button : MonoBehaviour {
         void Update()
    {
 
-       if (Vector3.Distance(HelperPanel.transform.position,panel.transform.position)<2f)
-        { 
-            gaucheDroite = 0;
-        }
 
-       if (gaucheDroite == 0) { 
-        DragAndDropPanel3.SetActive(false);
-        DragAndDropPanel2.SetActive(false);
-        DragAndDropPanel1.SetActive(true);
-        }
-
-        //_______________________________________________________
-        else if (gaucheDroite == 2) 
+        //____________________________________________________________________________enigmeTuto
+        if (const_Condition.winConst == false)
         {
-           if (dialogueEtTuto.disparue == true && dialogueEtTuto.dialogue == 11) { dialogueEtTuto.apparitionDialogue(); }
-            DragAndDropPanel3.SetActive(true);
-            DragAndDropPanel2.SetActive(false);
-            DragAndDropPanel1.SetActive(false);
+            if (Vector3.Distance(HelperPanel.transform.position, panel.transform.position) < 2f)
+            {
+                gaucheDroite = 0;
+            }
+
+            if (gaucheDroite == 0)
+            {
+                DragAndDropPanel3.SetActive(false);
+                DragAndDropPanel2.SetActive(false);
+                DragAndDropPanel1.SetActive(true);
+            }
+
+            //_______________________________________________________
+            else if (gaucheDroite == 2)
+            {
+                if (dialogueEtTuto.disparue == true && dialogueEtTuto.dialogue == 11) { dialogueEtTuto.apparitionDialogue(); }
+                DragAndDropPanel3.SetActive(true);
+                DragAndDropPanel2.SetActive(false);
+                DragAndDropPanel1.SetActive(false);
+            }
+
+            //_______________________________________________________
+            else if (gaucheDroite == 1)
+            {
+
+                if (dialogueEtTuto.disparue == true && dialogueEtTuto.dialogue == 8 && enigmeCondition.winPanel1 == true) { dialogueEtTuto.apparitionDialogue(); }
+                DragAndDropPanel3.SetActive(false);
+                DragAndDropPanel2.SetActive(true);
+                DragAndDropPanel1.SetActive(false);
+            }
         }
 
-        //_______________________________________________________
-        else if (gaucheDroite == 1)
+
+        else
         {
-            if (dialogueEtTuto.disparue == true && dialogueEtTuto.dialogue == 8 && enigmeCondition.winPanel1 == true) { dialogueEtTuto.apparitionDialogue(); }
-            DragAndDropPanel3.SetActive(false);
-            DragAndDropPanel2.SetActive(true);
-            DragAndDropPanel1.SetActive(false);
+
+            
+            if (Vector3.Distance(HelperPanelMino.transform.position, panelMino.transform.position) < 2f)
+            {
+                gaucheDroite = 0;
+            }
+
+            if (gaucheDroite == 0)
+            {
+                //DragAndDropPanelMino3.SetActive(false);
+                DragAndDropPanelMino2.SetActive(false);
+                DragAndDropPanelMino1.SetActive(true);
+            }
+
+            //_______________________________________________________
+            else if (gaucheDroite == 2)
+            {
+                //if (dialogueEtTuto.disparue == true && dialogueEtTuto.dialogue == 11) { dialogueEtTuto.apparitionDialogue(); }
+                //DragAndDropPanelMino3.SetActive(true);
+                DragAndDropPanelMino2.SetActive(false);
+                DragAndDropPanelMino1.SetActive(false);
+            }
+
+            //_______________________________________________________
+            else if (gaucheDroite == 1)
+            {
+                //if (dialogueEtTuto.disparue == true && dialogueEtTuto.dialogue == 8 && enigmeCondition.winPanel1 == true) { dialogueEtTuto.apparitionDialogue(); }
+                //DragAndDropPanelMino3.SetActive(false);
+                DragAndDropPanelMino2.SetActive(true);
+                DragAndDropPanelMino1.SetActive(false);
+            }
         }
-     
 
         //VectorPanel = new Vector3(27, 0, 0);
         //Button btn = boutonback.GetComponent<Button>();____________creer un input de bouton
