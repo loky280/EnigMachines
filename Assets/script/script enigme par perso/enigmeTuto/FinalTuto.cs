@@ -6,6 +6,8 @@ public class FinalTuto : MonoBehaviour
 {
     public DialogueEtTuto dialogueEtTuto;
 
+    public AudioSource sonclic;
+
     [SerializeField]
     GameObject pingEnigmeTuto;
 
@@ -31,7 +33,7 @@ public class FinalTuto : MonoBehaviour
     public void Final()
     {
 
-        
+        sonclic.Play();
         //Debug.Log("test");
 
         if (enigmeCondition.winPanel1 == true && enigmeCondition.winPanel2 == true && enigmeCondition.winPanel3 == true)
