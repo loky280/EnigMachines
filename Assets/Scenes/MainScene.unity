@@ -433,7 +433,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ok, c'est partis !
+  m_text: Ok, c'est parti !
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7708,8 +7708,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Tiens, salut je suis d\xE9sol\xE9 j'ai besoin que tu aide Bob dehors avec
-    le minotaure a ma place, je dois m'occuper de l'arraign\xE9e."
+  m_text: "Tiens, salut je suis d\xE9sol\xE9 j'ai besoin que tu aides Bob dehors
+    avec le minotaure a ma place, je dois m'occuper de l'arraign\xE9e."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8466,7 +8466,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "C'est m\xEAme \xE9tonnant qu'on est r\xE9ussis."
+  m_text: "C'est m\xEAme \xE9tonnant qu'on ait r\xE9ussi."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9542,8 +9542,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Bien jou\xE9, maintenant passont aux c\xE2blages, appuis sur cette fl\xE8che
-    pour passer a la prochaine r\xE9paration."
+  m_text: "Bien jou\xE9, maintenant passons aux c\xE2blages, appuis sur la fl\xE8che
+    de droite pour passer a la prochaine r\xE9paration."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -11453,7 +11453,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Tu t'es d\xE9brouill\xE9 comme un chef. Maintenant tu es officiellement
+  m_text: "Tu t'es d\xE9brouill\xE9 comme un chef. Maintenant, tu es officiellement
     l'un des n\xF4tres."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -11961,8 +11961,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 466634930}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.5731108, y: 1.0956802, z: 9.259936}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -3.957, y: 62.2, z: 4.04}
+  m_LocalScale: {x: 0.5441345, y: 0.5441345, z: 0.5441345}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1555032698}
@@ -20772,7 +20772,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Ici il suffit juste de prendre le jerrycan et de verser l'essence dans
+  m_text: "Ici, il suffit juste de prendre le jerrycan et de verser l'essence dans
     le r\xE9servoir en le positionnant au dessus."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -23093,7 +23093,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Bon, \xE7a suffira pour aujourd'hui tu commencera \xE0 partir de demain
-    a 8h, c'est bon pour toi ?\n"
+    \xE0 8h, c'est bon pour toi ?\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -24056,9 +24056,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Merci, on se revois a la pause.
-
-'
+  m_text: "Merci, on se revoit \xE0 la pause.\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -25254,7 +25252,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Aaah! Merci gamin sans toi j aurai gal\xE9r\xE9, c'est que c'est super
+  m_text: "Aaah! Merci gamin sans toi j'aurai gal\xE9r\xE9, c'est que c'est super
     lourd ces pi\xE8ces."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -25411,7 +25409,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Ces machines agissent comme des animaux et la nuit lorsqu'on a le dos
-    tourn\xE9 elle peuvent parfois se disput\xE9es."
+    tourn\xE9, elles peuvent parfois se disputer."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -25546,7 +25544,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Tu peut m'aider a porter et a assembl\xE9 ces pi\xE8ces.\n"
+  m_text: "Tu peux m'aider \xE0 porter et \xE0 assembler ces pi\xE8ces.\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -26443,7 +26441,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Aller! Clique sur l'\xE9preuve pour que je te montre comment \xE7a marche.\n"
+  m_text: "Aller! Appuie sur l'\xE9preuve pour que je te montre comment \xE7a marche.\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -27440,7 +27438,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Bon pour r\xE9parer le c\xE2blage, il faut prendre les embouts et les
+  m_text: "Bon, pour r\xE9parer le c\xE2blage, il faut prendre les embouts et les
     brancher sur les prises avec les bonnes couleurs.\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -29182,8 +29180,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "T'inqui\xE8te je vais pas te bouffer, d'ailleur tu tombe bien j ai besoin
-    de toi.\n"
+  m_text: "T'inqui\xE8te je vais pas te bouffer, d'ailleurs tu tombes bien, j'ai
+    besoin de toi.\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -30788,7 +30786,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ok, a plus.
+  m_text: "Ok, \xE0 plus."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -32785,7 +32783,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Pour commencer retire l'engrenage cass\xE9 en le prenant et le lachant.\n\n"
+  m_text: "Pour commencer, retire l'engrenage cass\xE9 en le prenant et le lachant.\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -35796,6 +35794,7 @@ GameObject:
   - component: {fileID: 1933931600}
   - component: {fileID: 1933931599}
   - component: {fileID: 1933931598}
+  - component: {fileID: 1933931602}
   m_Layer: 0
   m_Name: boite son
   m_TagString: Untagged
@@ -35881,6 +35880,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1933931602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933931597}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5deff40e068c029428203a81c846309a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sonAmbiance: {fileID: 0}
+  SonAmbianceActive: 0
 --- !u!1 &1944906843
 GameObject:
   m_ObjectHideFlags: 0
@@ -36868,7 +36881,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Ensuite place les engrenages neufs au bon endroits.
+  m_text: 'Ensuite, place les engrenages neufs aux bons endroits.
 
 
 '
@@ -37600,7 +37613,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "En tout cas merci pour ton aide t'est vraiment un sacr\xE9e bonhomme.\n"
+  m_text: "En tout cas merci pour ton aide, t'es vraiment un sacr\xE9e bonhomme.\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
