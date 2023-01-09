@@ -143,11 +143,19 @@ public class Interaction : MonoBehaviour {
                 camera.transform.Translate(VectorMino);
 
                 constructionMino.SetActive(true);
+                interactionMino.SetActive(false);
 
-                if ((dialogueEtTuto.disparue == true && dialogueEtTuto.dialogue==19) || (dialogueEtTuto.disparue == true && dialogueEtTuto.dialogue == 23) )
+                if (dialogueEtTuto.disparue == true && dialogueEtTuto.dialogue==19   )
                 {
-                    dialogueEtTuto.apparitionDialogue();
                     dialogueEtTuto.dialogue = 23;
+                    dialogueEtTuto.apparitionDialogue();
+                   
+                }
+                if (dialogueEtTuto.disparue == true && dialogueEtTuto.dialogue == 23) 
+                {
+
+                    dialogueEtTuto.apparitionDialogue();
+                    
                 }
 
                     //BoutonDemarrer.SetActive(true);
@@ -156,7 +164,7 @@ public class Interaction : MonoBehaviour {
                     //leftButton.SetActive(true);
                     //rightButton.SetActive(true);
                     //porteButton.SetActive(false); 
-                    interactionMino.SetActive(false); 
+                    //interactionMino.SetActive(false); 
 
                     Debug.Log("machiniste3");
             }

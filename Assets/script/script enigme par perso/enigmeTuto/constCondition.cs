@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Android.Types;
 using UnityEngine;
 
 public class constCondition : MonoBehaviour
 {
-    //public Interaction interaction;
+    public DialogueEtTuto dialogueEtTuto;
 
 
     [SerializeField]
@@ -23,6 +24,10 @@ public class constCondition : MonoBehaviour
     GameObject dragandDropPlane;
 
     //__________________________________________
+
+
+    [SerializeField]
+    GameObject anchor; 
 
     [SerializeField]
     GameObject minotaure;
@@ -73,7 +78,7 @@ public class constCondition : MonoBehaviour
             leftButton.SetActive(true);
             rightButton.SetActive(true);
             */
-            
+            anchor.SetActive(false);
             tete.SetActive(false);
             torse.SetActive(false);
             patteArriere.SetActive(false);
@@ -81,6 +86,7 @@ public class constCondition : MonoBehaviour
             dragandDropPlane.SetActive(false);
 
             minotaure.SetActive(true);
+            dialogueEtTuto.apparitionDialogue();
             /*
                         if (dialogueEtTuto.disparue == true && dialogueEtTuto.dialogue == 7)
                         {

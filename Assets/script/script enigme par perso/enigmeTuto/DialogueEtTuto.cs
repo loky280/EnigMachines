@@ -348,8 +348,11 @@ public class DialogueEtTuto : MonoBehaviour
         
 
         dialogueUI_1.SetActive(false);
-        
-        
+        dialogueUI_2.SetActive(false);
+        dialogueUI_4.SetActive(false);
+        dialogueUI_3.SetActive(false);
+
+
         if (button.langueFR == true)
         {
             dialoguepackage[dialogue].SetActive(false);
