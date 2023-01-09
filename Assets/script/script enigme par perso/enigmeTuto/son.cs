@@ -7,11 +7,12 @@ using UnityEngine;
 public class son : MonoBehaviour
 {
     public AudioSource sonAmbiance;
-    public bool SonAmbianceActive = false;
+    public bool SonAmbianceActive ;
     // Start is called before the first frame update
     void Start()
     {
-        
+        sonAmbiance.Play();
+        SonAmbianceActive = true;
     }
 
     // Update is called once per frame
