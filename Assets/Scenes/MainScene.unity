@@ -7708,8 +7708,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Tient, salut je suis d\xE9soler j ai besoin que tu aide bob dehors avec
-    le minotaure a ma place je dois m'occuper de l'arraign\xE9e."
+  m_text: "Tient, salut je suis d\xE9sol\xE9 j'ai besoin que tu aide Bob dehors avec
+    le minotaure a ma place, je dois m'occuper de l'arraign\xE9e."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
